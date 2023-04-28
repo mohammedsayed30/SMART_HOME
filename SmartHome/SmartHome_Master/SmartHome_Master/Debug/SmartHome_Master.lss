@@ -1,0 +1,3629 @@
+
+SmartHome_Master.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00001240  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000280  00800060  00001240  000012d4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000003  008002e0  008002e0  00001554  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00001554  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001584  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000240  00000000  00000000  000015c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00003af1  00000000  00000000  00001800  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000fdf  00000000  00000000  000052f1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00001b03  00000000  00000000  000062d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000534  00000000  00000000  00007dd4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000009ad  00000000  00000000  00008308  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00001f7a  00000000  00000000  00008cb5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000001b0  00000000  00000000  0000ac2f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 3a 00 	jmp	0x74	; 0x74 <__ctors_end>
+       4:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+       8:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+       c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      10:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      14:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      18:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      1c:	0c 94 9c 08 	jmp	0x1138	; 0x1138 <__vector_7>
+      20:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      24:	0c 94 c5 08 	jmp	0x118a	; 0x118a <__vector_9>
+      28:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      2c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      30:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      34:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      38:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      3c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      40:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      44:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      48:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      4c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      50:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+      54:	5a 07       	cpc	r21, r26
+      56:	3e 07       	cpc	r19, r30
+      58:	40 07       	cpc	r20, r16
+      5a:	42 07       	cpc	r20, r18
+      5c:	44 07       	cpc	r20, r20
+      5e:	46 07       	cpc	r20, r22
+      60:	48 07       	cpc	r20, r24
+      62:	4a 07       	cpc	r20, r26
+      64:	4c 07       	cpc	r20, r28
+      66:	4e 07       	cpc	r20, r30
+      68:	50 07       	cpc	r21, r16
+      6a:	52 07       	cpc	r21, r18
+      6c:	5b 07       	cpc	r21, r27
+      6e:	54 07       	cpc	r21, r20
+      70:	56 07       	cpc	r21, r22
+      72:	58 07       	cpc	r21, r24
+
+00000074 <__ctors_end>:
+      74:	11 24       	eor	r1, r1
+      76:	1f be       	out	0x3f, r1	; 63
+      78:	cf e5       	ldi	r28, 0x5F	; 95
+      7a:	d8 e0       	ldi	r29, 0x08	; 8
+      7c:	de bf       	out	0x3e, r29	; 62
+      7e:	cd bf       	out	0x3d, r28	; 61
+
+00000080 <__do_copy_data>:
+      80:	12 e0       	ldi	r17, 0x02	; 2
+      82:	a0 e6       	ldi	r26, 0x60	; 96
+      84:	b0 e0       	ldi	r27, 0x00	; 0
+      86:	e0 e4       	ldi	r30, 0x40	; 64
+      88:	f2 e1       	ldi	r31, 0x12	; 18
+      8a:	02 c0       	rjmp	.+4      	; 0x90 <__do_copy_data+0x10>
+      8c:	05 90       	lpm	r0, Z+
+      8e:	0d 92       	st	X+, r0
+      90:	a0 3e       	cpi	r26, 0xE0	; 224
+      92:	b1 07       	cpc	r27, r17
+      94:	d9 f7       	brne	.-10     	; 0x8c <__do_copy_data+0xc>
+
+00000096 <__do_clear_bss>:
+      96:	22 e0       	ldi	r18, 0x02	; 2
+      98:	a0 ee       	ldi	r26, 0xE0	; 224
+      9a:	b2 e0       	ldi	r27, 0x02	; 2
+      9c:	01 c0       	rjmp	.+2      	; 0xa0 <.do_clear_bss_start>
+
+0000009e <.do_clear_bss_loop>:
+      9e:	1d 92       	st	X+, r1
+
+000000a0 <.do_clear_bss_start>:
+      a0:	a3 3e       	cpi	r26, 0xE3	; 227
+      a2:	b2 07       	cpc	r27, r18
+      a4:	e1 f7       	brne	.-8      	; 0x9e <.do_clear_bss_loop>
+      a6:	0e 94 59 00 	call	0xb2	; 0xb2 <main>
+      aa:	0c 94 1e 09 	jmp	0x123c	; 0x123c <_exit>
+
+000000ae <__bad_interrupt>:
+      ae:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000b2 <main>:
+ * before the time is out
+ */
+extern uint8 window_check;
+
+
+int main(void){
+      b2:	cf 93       	push	r28
+      b4:	df 93       	push	r29
+      b6:	cd b7       	in	r28, 0x3d	; 61
+      b8:	de b7       	in	r29, 0x3e	; 62
+      ba:	2d 97       	sbiw	r28, 0x0d	; 13
+      bc:	0f b6       	in	r0, 0x3f	; 63
+      be:	f8 94       	cli
+      c0:	de bf       	out	0x3e, r29	; 62
+      c2:	0f be       	out	0x3f, r0	; 63
+      c4:	cd bf       	out	0x3d, r28	; 61
+	/*to receive the required state of Air condition*/
+	uint8 air_option=1;
+	uint8 Block_mode_state=0;
+	/*to recieve the state of the required Object the coming form mc2*/
+	volatile uint8 Obj_state=LOGIC_HIGH;
+      c6:	11 e0       	ldi	r17, 0x01	; 1
+      c8:	19 83       	std	Y+1, r17	; 0x01
+	/*the required state that chosen by the user*/
+	uint8 req_state;
+	/*enable the global interrupt for timer1*/
+	SREG |=(1<<7);
+      ca:	8f b7       	in	r24, 0x3f	; 63
+      cc:	80 68       	ori	r24, 0x80	; 128
+      ce:	8f bf       	out	0x3f, r24	; 63
+	uint8 Admin1_access_option=0;
+	/*to hold which option is selected by admin in second window*/
+	uint8 Admin2_access_option=0;
+
+	/*Initialize the LCD */
+	LCD_init();
+      d0:	0e 94 e1 07 	call	0xfc2	; 0xfc2 <LCD_init>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+      d4:	83 ec       	ldi	r24, 0xC3	; 195
+      d6:	99 e0       	ldi	r25, 0x09	; 9
+      d8:	01 97       	sbiw	r24, 0x01	; 1
+      da:	f1 f7       	brne	.-4      	; 0xd8 <main+0x26>
+      dc:	00 c0       	rjmp	.+0      	; 0xde <main+0x2c>
+      de:	00 00       	nop
+	_delay_ms(10);
+	/*set the callBack Timer1 function*/
+	Timer1_setCallBack(APP_SetCallBack);
+      e0:	8b eb       	ldi	r24, 0xBB	; 187
+      e2:	91 e0       	ldi	r25, 0x01	; 1
+      e4:	0e 94 13 09 	call	0x1226	; 0x1226 <Timer1_setCallBack>
+	 *  --->compare mode
+	 *  --->prescalar=1024
+	 * */
+	Timer1_ConfigType admin_conf;
+	/*set initialize value =0*/
+	admin_conf.initial_value=0;
+      e8:	1b 82       	std	Y+3, r1	; 0x03
+      ea:	1a 82       	std	Y+2, r1	; 0x02
+	/*set compare value = 60000 (60 second)*/
+	admin_conf.compare_value=60000;
+      ec:	80 e6       	ldi	r24, 0x60	; 96
+      ee:	9a ee       	ldi	r25, 0xEA	; 234
+      f0:	9d 83       	std	Y+5, r25	; 0x05
+      f2:	8c 83       	std	Y+4, r24	; 0x04
+	/*set the compare mode */
+	admin_conf.mode=COMPARE_MODE;
+      f4:	1e 83       	std	Y+6, r17	; 0x06
+	/*set the prescalar =1024*/
+	admin_conf.prescalar=CLK_1024;
+      f6:	85 e0       	ldi	r24, 0x05	; 5
+      f8:	8f 83       	std	Y+7, r24	; 0x07
+	 *  --->compare mode
+	 *  --->prescalar=1024
+	 * */
+	Timer1_ConfigType guest_conf;
+	/*set initialize value =0*/
+	guest_conf.initial_value=0;
+      fa:	19 86       	std	Y+9, r1	; 0x09
+      fc:	18 86       	std	Y+8, r1	; 0x08
+	/*set compare value = 40000--->40 seconds*/
+	guest_conf.compare_value=40000;
+      fe:	20 e4       	ldi	r18, 0x40	; 64
+     100:	3c e9       	ldi	r19, 0x9C	; 156
+     102:	3b 87       	std	Y+11, r19	; 0x0b
+     104:	2a 87       	std	Y+10, r18	; 0x0a
+	/*set the compare mode */
+	guest_conf.mode=COMPARE_MODE;
+     106:	1c 87       	std	Y+12, r17	; 0x0c
+	/*set the prescalar =1024*/
+	guest_conf.prescalar=CLK_1024;
+     108:	8d 87       	std	Y+13, r24	; 0x0d
+    /*Initialize SPI driver as master for this micro_controller */
+	SPI_initMaster();
+     10a:	0e 94 7d 08 	call	0x10fa	; 0x10fa <SPI_initMaster>
+
+	/*set the three led to indicate for admin_mode or guest or block*/
+	LED_SETUP(ADMIN_PORT,ADMIN_PIN);
+     10e:	60 e0       	ldi	r22, 0x00	; 0
+     110:	82 e0       	ldi	r24, 0x02	; 2
+     112:	0e 94 66 08 	call	0x10cc	; 0x10cc <LED_SETUP>
+	LED_SETUP(GUEST_PORT,GUEST_PIN);
+     116:	61 e0       	ldi	r22, 0x01	; 1
+     118:	82 e0       	ldi	r24, 0x02	; 2
+     11a:	0e 94 66 08 	call	0x10cc	; 0x10cc <LED_SETUP>
+	LED_SETUP(BLOCK_PORT,BLOCK_PIN);
+     11e:	62 e0       	ldi	r22, 0x02	; 2
+     120:	82 e0       	ldi	r24, 0x02	; 2
+     122:	0e 94 66 08 	call	0x10cc	; 0x10cc <LED_SETUP>
+	
+	/*read state of block mode*/
+	Block_mode_state=Internal_readByte(BLOCK_LOCATION_CHECK);
+     126:	80 e4       	ldi	r24, 0x40	; 64
+     128:	90 e0       	ldi	r25, 0x00	; 0
+     12a:	0e 94 2a 07 	call	0xe54	; 0xe54 <Internal_readByte>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+     12e:	93 e0       	ldi	r25, 0x03	; 3
+     130:	9a 95       	dec	r25
+     132:	f1 f7       	brne	.-4      	; 0x130 <main+0x7e>
+     134:	00 00       	nop
+	_delay_us(10);
+	if((Block_mode_state !=0xFF) && (Block_mode_state!=0)){
+     136:	81 50       	subi	r24, 0x01	; 1
+     138:	8e 3f       	cpi	r24, 0xFE	; 254
+     13a:	10 f4       	brcc	.+4      	; 0x140 <main+0x8e>
+		Blocked_mode();
+     13c:	0e 94 3c 04 	call	0x878	; 0x878 <Blocked_mode>
+	}
+    /*to read this location to check we will need set admin pass or not*/
+	admin_data=Internal_readByte(ADMIN_LOCATION_CHECK);
+     140:	80 e3       	ldi	r24, 0x30	; 48
+     142:	90 e0       	ldi	r25, 0x00	; 0
+     144:	0e 94 2a 07 	call	0xe54	; 0xe54 <Internal_readByte>
+     148:	18 2f       	mov	r17, r24
+     14a:	83 e0       	ldi	r24, 0x03	; 3
+     14c:	8a 95       	dec	r24
+     14e:	f1 f7       	brne	.-4      	; 0x14c <main+0x9a>
+     150:	00 00       	nop
+	_delay_us(10);
+    /*to read this location to check we will need set Guest_pass or not*/
+	guest_data=Internal_readByte(GUEST_LOCATION_CHECK);
+     152:	81 e3       	ldi	r24, 0x31	; 49
+     154:	90 e0       	ldi	r25, 0x00	; 0
+     156:	0e 94 2a 07 	call	0xe54	; 0xe54 <Internal_readByte>
+     15a:	93 e0       	ldi	r25, 0x03	; 3
+     15c:	9a 95       	dec	r25
+     15e:	f1 f7       	brne	.-4      	; 0x15c <main+0xaa>
+     160:	00 00       	nop
+
+	/*if one of these conditions true -->this mean there is wrong
+	 * in this operation so we need to run it again
+	 * */
+
+	if(admin_data !=PASS_SET || guest_data !=PASS_SET){
+     162:	11 30       	cpi	r17, 0x01	; 1
+     164:	11 f4       	brne	.+4      	; 0x16a <main+0xb8>
+     166:	81 30       	cpi	r24, 0x01	; 1
+     168:	11 f0       	breq	.+4      	; 0x16e <main+0xbc>
+		/*set the passwords for the admin and the guest*/
+		set_password();
+     16a:	0e 94 e5 01 	call	0x3ca	; 0x3ca <set_password>
+	}
+	/*to get the mode that was selcted by user*/
+	select_mode();
+     16e:	0e 94 a7 02 	call	0x54e	; 0x54e <select_mode>
+	/*to hold the state of guest or admin password is correct or not*/
+	uint8 pass_state=0;
+	/*to hold which option is selected by guest*/
+	uint8 Guest_access_option=0;
+	/*to hold which option is selected by admin in first window*/
+	uint8 Admin1_access_option=0;
+     172:	00 e0       	ldi	r16, 0x00	; 0
+	/*to hold what  mode was selected by user*/
+	//volatile uint8 mode;
+	/*to hold the state of guest or admin password is correct or not*/
+	uint8 pass_state=0;
+	/*to hold which option is selected by guest*/
+	uint8 Guest_access_option=0;
+     174:	f1 2c       	mov	r15, r1
+	/*to hold the value for this location in EEPROM*/
+    uint8 guest_data=0;
+	/*to hold what  mode was selected by user*/
+	//volatile uint8 mode;
+	/*to hold the state of guest or admin password is correct or not*/
+	uint8 pass_state=0;
+     176:	e1 2c       	mov	r14, r1
+	}
+	/*to get the mode that was selcted by user*/
+	select_mode();
+	while(1){
+		/*to indicate the time is over*/
+		if(window_check==0){
+     178:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+     17c:	81 11       	cpse	r24, r1
+     17e:	02 c0       	rjmp	.+4      	; 0x184 <main+0xd2>
+		   select_mode();
+     180:	0e 94 a7 02 	call	0x54e	; 0x54e <select_mode>
+		}
+		/*if mode equal=0 this mean the user select admin_mode otherwise guest*/
+		/*this is mean the user select the admin_mode*/
+		if(g_mode==0){
+     184:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <g_mode>
+     188:	81 11       	cpse	r24, r1
+     18a:	96 c0       	rjmp	.+300    	; 0x2b8 <main+0x206>
+			/*run the timer to count 60 seconds*/
+			Timer1_init(&admin_conf);
+     18c:	ce 01       	movw	r24, r28
+     18e:	02 96       	adiw	r24, 0x02	; 2
+     190:	0e 94 ee 08 	call	0x11dc	; 0x11dc <Timer1_init>
+	        /*to check if user pressed "More" option*/
+			Admin2_access_option=0;
+			/*turn on the led that represent the guest mode*/
+			LED_OFF(GUEST_PORT,GUEST_PIN);
+     194:	61 e0       	ldi	r22, 0x01	; 1
+     196:	82 e0       	ldi	r24, 0x02	; 2
+     198:	0e 94 79 08 	call	0x10f2	; 0x10f2 <LED_OFF>
+			/*turn off the others led */
+			LED_ON(ADMIN_PORT,ADMIN_PIN);
+     19c:	60 e0       	ldi	r22, 0x00	; 0
+     19e:	82 e0       	ldi	r24, 0x02	; 2
+     1a0:	0e 94 75 08 	call	0x10ea	; 0x10ea <LED_ON>
+			LED_OFF(BLOCK_PORT,BLOCK_PIN);
+     1a4:	62 e0       	ldi	r22, 0x02	; 2
+     1a6:	82 e0       	ldi	r24, 0x02	; 2
+     1a8:	0e 94 79 08 	call	0x10f2	; 0x10f2 <LED_OFF>
+			/*to allow the user three times*/
+			count=NUM_TRIES_ALLOWED;
+     1ac:	13 e0       	ldi	r17, 0x03	; 3
+			do{
+				/*this mean this the first time asking password from the guest*/
+				if(pass_check_count==0){
+     1ae:	80 91 e0 02 	lds	r24, 0x02E0	; 0x8002e0 <__data_end>
+     1b2:	81 11       	cpse	r24, r1
+     1b4:	03 c0       	rjmp	.+6      	; 0x1bc <main+0x10a>
+				   pass_state=check_pass(ADMIN);
+     1b6:	0e 94 c7 02 	call	0x58e	; 0x58e <check_pass>
+     1ba:	e8 2e       	mov	r14, r24
+			    }
+			
+			/*if this condition true this mean that password is correct*/
+				if(pass_state==0){
+     1bc:	ee 20       	and	r14, r14
+     1be:	29 f0       	breq	.+10     	; 0x1ca <main+0x118>
+					/*this mean we don't need the rest of tries any more*/
+					break;
+				}
+				/*this mean the password is wrong*/
+				else if(pass_state>0){
+     1c0:	11 f0       	breq	.+4      	; 0x1c6 <main+0x114>
+					/*this mean the user entered the password wrong*/
+					wrong_passwords();
+     1c2:	0e 94 2b 03 	call	0x656	; 0x656 <wrong_passwords>
+				}
+			    count--;
+     1c6:	11 50       	subi	r17, 0x01	; 1
+
+		    }while(count!=0);
+     1c8:	91 f7       	brne	.-28     	; 0x1ae <main+0xfc>
+			/*to avoid the system for asking the password again*/
+			pass_check_count++;
+     1ca:	80 91 e0 02 	lds	r24, 0x02E0	; 0x8002e0 <__data_end>
+     1ce:	8f 5f       	subi	r24, 0xFF	; 255
+     1d0:	80 93 e0 02 	sts	0x02E0, r24	; 0x8002e0 <__data_end>
+			/*return the allowed times of entering wrong passwords to default*/
+			left_times=NUM_TRIES_ALLOWED;
+     1d4:	83 e0       	ldi	r24, 0x03	; 3
+     1d6:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <left_times>
+			/*check if the user used the allowed maximum times of tries*/
+			if(count==0){
+     1da:	11 11       	cpse	r17, r1
+     1dc:	03 c0       	rjmp	.+6      	; 0x1e4 <main+0x132>
+				/*this mean that the user used the allowed three times*/
+				/*go to the Blocked Mode-->stop the system for 25 seconds*/
+				Blocked_mode();
+     1de:	0e 94 3c 04 	call	0x878	; 0x878 <Blocked_mode>
+				/*to left this steps and return to the check
+				 * passwords again
+				 */
+				continue;
+     1e2:	ca cf       	rjmp	.-108    	; 0x178 <main+0xc6>
+			}
+/*to enter always the loop as always as the time is not out*/
+			window_check=1;
+     1e4:	81 e0       	ldi	r24, 0x01	; 1
+     1e6:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+		/*this is mean the user select the admin_mode*/
+		if(g_mode==0){
+			/*run the timer to count 60 seconds*/
+			Timer1_init(&admin_conf);
+	        /*to check if user pressed "More" option*/
+			Admin2_access_option=0;
+     1ea:	10 e0       	ldi	r17, 0x00	; 0
+			}
+/*to enter always the loop as always as the time is not out*/
+			window_check=1;
+			do{
+				do{
+					if(Admin2_access_option!=10){
+     1ec:	1a 30       	cpi	r17, 0x0A	; 10
+     1ee:	21 f0       	breq	.+8      	; 0x1f8 <main+0x146>
+						/*to get off the loop if the user choose any thing except RET option */ 
+						Admin2_access_option=0;
+						/*this mean the user choose to Previous window*/
+						/*move to the available options for guest*/
+						Admin1_access_option=Admin_First_access();
+     1f0:	0e 94 4d 03 	call	0x69a	; 0x69a <Admin_First_access>
+     1f4:	08 2f       	mov	r16, r24
+			window_check=1;
+			do{
+				do{
+					if(Admin2_access_option!=10){
+						/*to get off the loop if the user choose any thing except RET option */ 
+						Admin2_access_option=0;
+     1f6:	10 e0       	ldi	r17, 0x00	; 0
+						/*this mean the user choose to Previous window*/
+						/*move to the available options for guest*/
+						Admin1_access_option=Admin_First_access();
+					}
+					/*check if admin want to goes to the second window*/
+					if(Admin1_access_option==4 || Admin2_access_option==10){
+     1f8:	04 30       	cpi	r16, 0x04	; 4
+     1fa:	11 f0       	breq	.+4      	; 0x200 <main+0x14e>
+     1fc:	1a 30       	cpi	r17, 0x0A	; 10
+     1fe:	19 f4       	brne	.+6      	; 0x206 <main+0x154>
+						Admin2_access_option=Admin_Second_access();
+     200:	0e 94 92 03 	call	0x724	; 0x724 <Admin_Second_access>
+     204:	18 2f       	mov	r17, r24
+					}
+				}while(Admin2_access_option==4);
+     206:	14 30       	cpi	r17, 0x04	; 4
+     208:	89 f3       	breq	.-30     	; 0x1ec <main+0x13a>
+				/*send the mode to other controller*/
+				SPI_sendReciveByte(g_mode);
+     20a:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <g_mode>
+     20e:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+				/*this mean in the first window*/
+				if(Admin2_access_option==0){
+     212:	11 11       	cpse	r17, r1
+     214:	1d c0       	rjmp	.+58     	; 0x250 <main+0x19e>
+					/*send the window (0 mean the first window) (1 mean the second window)*/
+					SPI_sendReciveByte(0);
+     216:	80 e0       	ldi	r24, 0x00	; 0
+     218:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+					/*send the Guest_Option that chosen */
+					SPI_sendReciveByte(Admin1_access_option);
+     21c:	80 2f       	mov	r24, r16
+     21e:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+     222:	87 ea       	ldi	r24, 0xA7	; 167
+     224:	91 e6       	ldi	r25, 0x61	; 97
+     226:	01 97       	sbiw	r24, 0x01	; 1
+     228:	f1 f7       	brne	.-4      	; 0x226 <main+0x174>
+     22a:	00 c0       	rjmp	.+0      	; 0x22c <main+0x17a>
+     22c:	00 00       	nop
+					/*to the other controller get the state*/
+					_delay_ms(100);
+					/*receive the state of an object from the other MC*/
+					Obj_state=SPI_sendReciveByte(SPI_DEFAULT_DATA_VALUE);
+     22e:	8f ef       	ldi	r24, 0xFF	; 255
+     230:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+     234:	89 83       	std	Y+1, r24	; 0x01
+					/*display the informations of the required room*/
+					req_state= Admin1_menu(Obj_state,Admin1_access_option);
+     236:	89 81       	ldd	r24, Y+1	; 0x01
+     238:	60 2f       	mov	r22, r16
+     23a:	0e 94 cb 04 	call	0x996	; 0x996 <Admin1_menu>
+					/*send the required state*/
+					SPI_sendReciveByte(req_state);
+     23e:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+     242:	87 ea       	ldi	r24, 0xA7	; 167
+     244:	91 e6       	ldi	r25, 0x61	; 97
+     246:	01 97       	sbiw	r24, 0x01	; 1
+     248:	f1 f7       	brne	.-4      	; 0x246 <main+0x194>
+     24a:	00 c0       	rjmp	.+0      	; 0x24c <main+0x19a>
+     24c:	00 00       	nop
+     24e:	2a c0       	rjmp	.+84     	; 0x2a4 <main+0x1f2>
+
+				}
+				/*this mean in the second window*/
+				else{
+					/*send the window (0 mean the first window) (1 mean the second window)*/
+					SPI_sendReciveByte(1);
+     250:	81 e0       	ldi	r24, 0x01	; 1
+     252:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+					/*send the Guest_Option that chosen */
+					SPI_sendReciveByte(Admin2_access_option);
+     256:	81 2f       	mov	r24, r17
+     258:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+     25c:	87 ea       	ldi	r24, 0xA7	; 167
+     25e:	91 e6       	ldi	r25, 0x61	; 97
+     260:	01 97       	sbiw	r24, 0x01	; 1
+     262:	f1 f7       	brne	.-4      	; 0x260 <main+0x1ae>
+     264:	00 c0       	rjmp	.+0      	; 0x266 <main+0x1b4>
+     266:	00 00       	nop
+					/*to the other controller get the state*/
+					_delay_ms(100);
+
+					/*check if user want to access the air condition*/
+					if(Admin2_access_option==3){
+     268:	13 30       	cpi	r17, 0x03	; 3
+     26a:	31 f4       	brne	.+12     	; 0x278 <main+0x1c6>
+						do{
+						   air_option=AirController_fun();
+     26c:	0e 94 37 05 	call	0xa6e	; 0xa6e <AirController_fun>
+						}while(air_option!=0);
+     270:	81 11       	cpse	r24, r1
+     272:	fc cf       	rjmp	.-8      	; 0x26c <main+0x1ba>
+						/*to indicate the system must goes to the second window of this system*/
+						Admin2_access_option=10;
+     274:	1a e0       	ldi	r17, 0x0A	; 10
+     276:	16 c0       	rjmp	.+44     	; 0x2a4 <main+0x1f2>
+						continue;                   
+					}
+					else{
+							/*receive the state of an object from the other MC*/
+						Obj_state=SPI_sendReciveByte(SPI_DEFAULT_DATA_VALUE);
+     278:	8f ef       	ldi	r24, 0xFF	; 255
+     27a:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+     27e:	89 83       	std	Y+1, r24	; 0x01
+						/*display the informations of the required room*/
+						req_state= Admin2_menu(Obj_state,Admin2_access_option);
+     280:	89 81       	ldd	r24, Y+1	; 0x01
+     282:	61 2f       	mov	r22, r17
+     284:	0e 94 09 05 	call	0xa12	; 0xa12 <Admin2_menu>
+						/*send the required state*/
+						SPI_sendReciveByte(req_state);
+     288:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+     28c:	87 ea       	ldi	r24, 0xA7	; 167
+     28e:	91 e6       	ldi	r25, 0x61	; 97
+     290:	01 97       	sbiw	r24, 0x01	; 1
+     292:	f1 f7       	brne	.-4      	; 0x290 <main+0x1de>
+     294:	00 c0       	rjmp	.+0      	; 0x296 <main+0x1e4>
+     296:	00 00       	nop
+						_delay_ms(100);
+						/*this mean the user choose to Previous window*/
+						/*move to the available options for guest*/
+						Admin2_access_option=Admin_Second_access();
+     298:	0e 94 92 03 	call	0x724	; 0x724 <Admin_Second_access>
+     29c:	18 2f       	mov	r17, r24
+						/*check if user want to goes back to first window*/
+						if(Admin2_access_option==4){
+     29e:	84 30       	cpi	r24, 0x04	; 4
+     2a0:	09 f4       	brne	.+2      	; 0x2a4 <main+0x1f2>
+							/*reinitialize the value of this variable to enter the first window*/ 
+							Admin2_access_option=0;
+     2a2:	10 e0       	ldi	r17, 0x00	; 0
+						}
+					}
+				}
+			}while(window_check==1);
+     2a4:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+     2a8:	81 30       	cpi	r24, 0x01	; 1
+     2aa:	09 f4       	brne	.+2      	; 0x2ae <main+0x1fc>
+     2ac:	9f cf       	rjmp	.-194    	; 0x1ec <main+0x13a>
+			/*this mean the  admin time  is out*/
+			if(window_check==0)                    //
+     2ae:	81 11       	cpse	r24, r1
+     2b0:	63 cf       	rjmp	.-314    	; 0x178 <main+0xc6>
+			    select_mode();
+     2b2:	0e 94 a7 02 	call	0x54e	; 0x54e <select_mode>
+     2b6:	60 cf       	rjmp	.-320    	; 0x178 <main+0xc6>
+			
+		}
+		/*this is mean the user select the guest_mode*/
+		else if(g_mode==1){
+     2b8:	81 30       	cpi	r24, 0x01	; 1
+     2ba:	09 f0       	breq	.+2      	; 0x2be <main+0x20c>
+     2bc:	59 c0       	rjmp	.+178    	; 0x370 <main+0x2be>
+			/*run the timer to count 60 seconds (avaliable time)*/
+			Timer1_init(&guest_conf);
+     2be:	ce 01       	movw	r24, r28
+     2c0:	08 96       	adiw	r24, 0x08	; 8
+     2c2:	0e 94 ee 08 	call	0x11dc	; 0x11dc <Timer1_init>
+			/*turn on the led that represent the guest mode*/
+			LED_ON(GUEST_PORT,GUEST_PIN);
+     2c6:	61 e0       	ldi	r22, 0x01	; 1
+     2c8:	82 e0       	ldi	r24, 0x02	; 2
+     2ca:	0e 94 75 08 	call	0x10ea	; 0x10ea <LED_ON>
+			/*turn off the others led */
+			LED_OFF(ADMIN_PORT,ADMIN_PIN);
+     2ce:	60 e0       	ldi	r22, 0x00	; 0
+     2d0:	82 e0       	ldi	r24, 0x02	; 2
+     2d2:	0e 94 79 08 	call	0x10f2	; 0x10f2 <LED_OFF>
+			LED_OFF(BLOCK_PORT,BLOCK_PIN);
+     2d6:	62 e0       	ldi	r22, 0x02	; 2
+     2d8:	82 e0       	ldi	r24, 0x02	; 2
+     2da:	0e 94 79 08 	call	0x10f2	; 0x10f2 <LED_OFF>
+			/*to allow the user three times*/
+			count=NUM_TRIES_ALLOWED;
+     2de:	13 e0       	ldi	r17, 0x03	; 3
+			do{
+
+				/*this mean this the first time asking password
+				 * from the guest
+				 */
+				if(pass_check_count==0){
+     2e0:	80 91 e0 02 	lds	r24, 0x02E0	; 0x8002e0 <__data_end>
+     2e4:	81 11       	cpse	r24, r1
+     2e6:	04 c0       	rjmp	.+8      	; 0x2f0 <main+0x23e>
+				   pass_state=check_pass(GUEST);
+     2e8:	81 e0       	ldi	r24, 0x01	; 1
+     2ea:	0e 94 c7 02 	call	0x58e	; 0x58e <check_pass>
+     2ee:	e8 2e       	mov	r14, r24
+			    }
+			/*if this condition true this mean that password is correct*/
+				if(pass_state==0){
+     2f0:	e1 10       	cpse	r14, r1
+     2f2:	04 c0       	rjmp	.+8      	; 0x2fc <main+0x24a>
+
+					/*move to the available options for guest*/
+					Guest_access_option=Guest_access();
+     2f4:	0e 94 d9 03 	call	0x7b2	; 0x7b2 <Guest_access>
+     2f8:	f8 2e       	mov	r15, r24
+				    /*this mean we don't need the rest of tries any more*/
+					break;
+     2fa:	05 c0       	rjmp	.+10     	; 0x306 <main+0x254>
+			    }
+				else if(pass_state>0){
+     2fc:	e1 10       	cpse	r14, r1
+					/*this mean the user entered the password wrong*/
+					wrong_passwords();
+     2fe:	0e 94 2b 03 	call	0x656	; 0x656 <wrong_passwords>
+				}
+				count--;
+     302:	11 50       	subi	r17, 0x01	; 1
+
+		    }while(count!=0);
+     304:	69 f7       	brne	.-38     	; 0x2e0 <main+0x22e>
+			/*to avoid the system for asking the password again*/
+			pass_check_count++;
+     306:	80 91 e0 02 	lds	r24, 0x02E0	; 0x8002e0 <__data_end>
+     30a:	8f 5f       	subi	r24, 0xFF	; 255
+     30c:	80 93 e0 02 	sts	0x02E0, r24	; 0x8002e0 <__data_end>
+			/*return the allowed times of entering wrong passwords to default*/
+			left_times=NUM_TRIES_ALLOWED;
+     310:	83 e0       	ldi	r24, 0x03	; 3
+     312:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <left_times>
+			/*check if the user used the allowed maximum times of tries*/
+			if(count==0){
+     316:	11 11       	cpse	r17, r1
+     318:	03 c0       	rjmp	.+6      	; 0x320 <main+0x26e>
+				/*this mean that the user used the allowed three times*/
+				/*go to the Blocked Mode-->stop the system for 25 seconds*/
+				Blocked_mode();
+     31a:	0e 94 3c 04 	call	0x878	; 0x878 <Blocked_mode>
+				/*to left this steps and return to the check
+				 * passwords again
+				 */
+				continue;
+     31e:	2c cf       	rjmp	.-424    	; 0x178 <main+0xc6>
+			}
+/*to enter always the loop as always as the time is not out*/
+			window_check=1;
+     320:	81 e0       	ldi	r24, 0x01	; 1
+     322:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+			do{
+				/*send the mode to other controller*/
+				SPI_sendReciveByte(g_mode);
+     326:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <g_mode>
+     32a:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+				/*send the Guest_Option that chosen */
+				SPI_sendReciveByte(Guest_access_option);
+     32e:	8f 2d       	mov	r24, r15
+     330:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+     334:	91 e2       	ldi	r25, 0x21	; 33
+     336:	9a 95       	dec	r25
+     338:	f1 f7       	brne	.-4      	; 0x336 <main+0x284>
+     33a:	00 00       	nop
+				/*to the other controller get the state*/
+				_delay_us(100);
+				/*receive the state of an object from the other MC*/
+				Obj_state=SPI_sendReciveByte(SPI_DEFAULT_DATA_VALUE);
+     33c:	8f ef       	ldi	r24, 0xFF	; 255
+     33e:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+     342:	89 83       	std	Y+1, r24	; 0x01
+
+				/*display the informations of the required room*/
+				req_state= Guest_menu(Obj_state,Guest_access_option);
+     344:	89 81       	ldd	r24, Y+1	; 0x01
+     346:	6f 2d       	mov	r22, r15
+     348:	0e 94 7d 04 	call	0x8fa	; 0x8fa <Guest_menu>
+			    /*send the required state*/
+			    SPI_sendReciveByte(req_state);
+     34c:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+     350:	87 ea       	ldi	r24, 0xA7	; 167
+     352:	91 e6       	ldi	r25, 0x61	; 97
+     354:	01 97       	sbiw	r24, 0x01	; 1
+     356:	f1 f7       	brne	.-4      	; 0x354 <main+0x2a2>
+     358:	00 c0       	rjmp	.+0      	; 0x35a <main+0x2a8>
+     35a:	00 00       	nop
+
+				/*this mean the user choose to Previous window*/
+				/*move to the available options for guest*/
+				_delay_ms(100);
+
+			    Guest_access_option=Guest_access();
+     35c:	0e 94 d9 03 	call	0x7b2	; 0x7b2 <Guest_access>
+     360:	f8 2e       	mov	r15, r24
+
+				}while(window_check==1);
+     362:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+     366:	81 30       	cpi	r24, 0x01	; 1
+     368:	f1 f2       	breq	.-68     	; 0x326 <main+0x274>
+				/*this mean the time for guest is over*/
+				select_mode();
+     36a:	0e 94 a7 02 	call	0x54e	; 0x54e <select_mode>
+     36e:	04 cf       	rjmp	.-504    	; 0x178 <main+0xc6>
+ 		}
+		else{
+			/*this mean the user select optional not exist*/
+			/*so will back to selection list again*/
+			select_mode();
+     370:	0e 94 a7 02 	call	0x54e	; 0x54e <select_mode>
+     374:	01 cf       	rjmp	.-510    	; 0x178 <main+0xc6>
+
+00000376 <APP_SetCallBack>:
+ * description:this response for some actions when the timer count
+ * the required time(40 seconds) in guest mode or (60 seconds) in admin_mode
+ * the action-->return to the previously window
+ */
+
+void APP_SetCallBack(void){
+     376:	cf 93       	push	r28
+     378:	df 93       	push	r29
+     37a:	1f 92       	push	r1
+     37c:	cd b7       	in	r28, 0x3d	; 61
+     37e:	de b7       	in	r29, 0x3e	; 62
+   volatile uint8 rest=0;
+     380:	19 82       	std	Y+1, r1	; 0x01
+	/*to leave the guest window and return to select mode window*/
+	window_check=0;
+     382:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__DATA_REGION_ORIGIN__>
+	/*to ask the user about passwords after the timeout if he
+	 * want to enter again
+	 * */
+	pass_check_count=0;
+     386:	10 92 e0 02 	sts	0x02E0, r1	; 0x8002e0 <__data_end>
+	/*clear the LCD screen display that the time is out*/
+	LCD_clearScreen();
+     38a:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	LCD_displayString("Time Out");
+     38e:	83 e6       	ldi	r24, 0x63	; 99
+     390:	90 e0       	ldi	r25, 0x00	; 0
+     392:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	/*turn each led that indicate which state works now*/
+	/*turn of the led that indicates the guest mode*/
+	LED_OFF(GUEST_PORT,GUEST_PIN);
+     396:	61 e0       	ldi	r22, 0x01	; 1
+     398:	70 e0       	ldi	r23, 0x00	; 0
+     39a:	82 e0       	ldi	r24, 0x02	; 2
+     39c:	90 e0       	ldi	r25, 0x00	; 0
+     39e:	0e 94 79 08 	call	0x10f2	; 0x10f2 <LED_OFF>
+	/*turn of the led that indicates the admin_mode*/
+	LED_OFF(ADMIN_PORT,ADMIN_PIN);
+     3a2:	60 e0       	ldi	r22, 0x00	; 0
+     3a4:	70 e0       	ldi	r23, 0x00	; 0
+     3a6:	82 e0       	ldi	r24, 0x02	; 2
+     3a8:	90 e0       	ldi	r25, 0x00	; 0
+     3aa:	0e 94 79 08 	call	0x10f2	; 0x10f2 <LED_OFF>
+	/*turn of the led that indicates the block mode*/
+	LED_OFF(BLOCK_PORT,BLOCK_PIN);
+     3ae:	62 e0       	ldi	r22, 0x02	; 2
+     3b0:	70 e0       	ldi	r23, 0x00	; 0
+     3b2:	82 e0       	ldi	r24, 0x02	; 2
+     3b4:	90 e0       	ldi	r25, 0x00	; 0
+     3b6:	0e 94 79 08 	call	0x10f2	; 0x10f2 <LED_OFF>
+	/*stop the timer for counting*/
+	Timer1_deInit();
+     3ba:	0e 94 11 09 	call	0x1222	; 0x1222 <Timer1_deInit>
+	/*to enable the watch dog timer to reset the system when this interrupt occurs for (2.1) second*/
+	WDTCR = (1<<WDE)|(1<<WDP2)|(1<<WDP1)|(1<<WDP0);	
+     3be:	8f e0       	ldi	r24, 0x0F	; 15
+     3c0:	81 bd       	out	0x21, r24	; 33
+
+}
+     3c2:	0f 90       	pop	r0
+     3c4:	df 91       	pop	r29
+     3c6:	cf 91       	pop	r28
+     3c8:	08 95       	ret
+
+000003ca <set_password>:
+ *
+ * description:set the passwords of admin_mode and guest_mode
+ * in the first time only
+ *
+ */
+void set_password(void){
+     3ca:	1f 93       	push	r17
+     3cc:	cf 93       	push	r28
+     3ce:	df 93       	push	r29
+	/*counter for the loop*/
+	uint16 i;
+	/*to hold the number that is coming from user*/
+	uint8 digit;
+
+	LCD_moveCursor(0,3);
+     3d0:	63 e0       	ldi	r22, 0x03	; 3
+     3d2:	80 e0       	ldi	r24, 0x00	; 0
+     3d4:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("Welcome home");
+     3d8:	8c e6       	ldi	r24, 0x6C	; 108
+     3da:	90 e0       	ldi	r25, 0x00	; 0
+     3dc:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     3e0:	2f e3       	ldi	r18, 0x3F	; 63
+     3e2:	8d e0       	ldi	r24, 0x0D	; 13
+     3e4:	93 e0       	ldi	r25, 0x03	; 3
+     3e6:	21 50       	subi	r18, 0x01	; 1
+     3e8:	80 40       	sbci	r24, 0x00	; 0
+     3ea:	90 40       	sbci	r25, 0x00	; 0
+     3ec:	e1 f7       	brne	.-8      	; 0x3e6 <set_password+0x1c>
+     3ee:	00 c0       	rjmp	.+0      	; 0x3f0 <set_password+0x26>
+     3f0:	00 00       	nop
+	_delay_ms(1000);
+	LCD_clearScreen();
+     3f2:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+     3f6:	83 ec       	ldi	r24, 0xC3	; 195
+     3f8:	99 e0       	ldi	r25, 0x09	; 9
+     3fa:	01 97       	sbiw	r24, 0x01	; 1
+     3fc:	f1 f7       	brne	.-4      	; 0x3fa <set_password+0x30>
+     3fe:	00 c0       	rjmp	.+0      	; 0x400 <__EEPROM_REGION_LENGTH__>
+     400:	00 00       	nop
+	
+	_delay_ms(10);
+	/*configurations for set the password the admin*/
+
+	LCD_moveCursor(0,0);
+     402:	60 e0       	ldi	r22, 0x00	; 0
+     404:	80 e0       	ldi	r24, 0x00	; 0
+     406:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("Set Admin Pass");
+     40a:	89 e7       	ldi	r24, 0x79	; 121
+     40c:	90 e0       	ldi	r25, 0x00	; 0
+     40e:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	LCD_moveCursor(1,0);
+     412:	60 e0       	ldi	r22, 0x00	; 0
+     414:	81 e0       	ldi	r24, 0x01	; 1
+     416:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("Admin Pass:");
+     41a:	88 e8       	ldi	r24, 0x88	; 136
+     41c:	90 e0       	ldi	r25, 0x00	; 0
+     41e:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	for(i=0;i<NO_OF_DIGIT;i++){
+     422:	c0 e0       	ldi	r28, 0x00	; 0
+     424:	d0 e0       	ldi	r29, 0x00	; 0
+     426:	1c c0       	rjmp	.+56     	; 0x460 <__EEPROM_REGION_LENGTH__+0x60>
+		/*get the digit from the user*/
+		digit=KEYPAD_getPressedKey();
+     428:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+     42c:	18 2f       	mov	r17, r24
+		/*display (*) instead the real digit*/
+		LCD_displayCharacter('*');
+     42e:	8a e2       	ldi	r24, 0x2A	; 42
+     430:	0e 94 09 08 	call	0x1012	; 0x1012 <LCD_displayCharacter>
+     434:	9f e9       	ldi	r25, 0x9F	; 159
+     436:	26 e8       	ldi	r18, 0x86	; 134
+     438:	81 e0       	ldi	r24, 0x01	; 1
+     43a:	91 50       	subi	r25, 0x01	; 1
+     43c:	20 40       	sbci	r18, 0x00	; 0
+     43e:	80 40       	sbci	r24, 0x00	; 0
+     440:	e1 f7       	brne	.-8      	; 0x43a <__EEPROM_REGION_LENGTH__+0x3a>
+     442:	00 c0       	rjmp	.+0      	; 0x444 <__EEPROM_REGION_LENGTH__+0x44>
+     444:	00 00       	nop
+		/*press delay*/
+		_delay_ms(500);
+		/*save this digit in EEPROM*/
+		Internal_writeByte((ADMIN_PASS_FIRST_LOCATION+i),digit);
+     446:	61 2f       	mov	r22, r17
+     448:	70 e0       	ldi	r23, 0x00	; 0
+     44a:	ce 01       	movw	r24, r28
+     44c:	40 96       	adiw	r24, 0x10	; 16
+     44e:	0e 94 18 07 	call	0xe30	; 0xe30 <Internal_writeByte>
+     452:	83 ec       	ldi	r24, 0xC3	; 195
+     454:	99 e0       	ldi	r25, 0x09	; 9
+     456:	01 97       	sbiw	r24, 0x01	; 1
+     458:	f1 f7       	brne	.-4      	; 0x456 <__EEPROM_REGION_LENGTH__+0x56>
+     45a:	00 c0       	rjmp	.+0      	; 0x45c <__EEPROM_REGION_LENGTH__+0x5c>
+     45c:	00 00       	nop
+
+	LCD_moveCursor(0,0);
+	LCD_displayString("Set Admin Pass");
+	LCD_moveCursor(1,0);
+	LCD_displayString("Admin Pass:");
+	for(i=0;i<NO_OF_DIGIT;i++){
+     45e:	21 96       	adiw	r28, 0x01	; 1
+     460:	c3 30       	cpi	r28, 0x03	; 3
+     462:	d1 05       	cpc	r29, r1
+     464:	08 f3       	brcs	.-62     	; 0x428 <__EEPROM_REGION_LENGTH__+0x28>
+	 * this location if it contain this number or not
+	 * if it not contain this number --->this is mean set password not done
+	 * if it contained this number(15)-->this is mean we don't need
+	 * this step any more
+	 */
+	Internal_writeByte(ADMIN_LOCATION_CHECK ,PASS_SET);
+     466:	61 e0       	ldi	r22, 0x01	; 1
+     468:	70 e0       	ldi	r23, 0x00	; 0
+     46a:	80 e3       	ldi	r24, 0x30	; 48
+     46c:	90 e0       	ldi	r25, 0x00	; 0
+     46e:	0e 94 18 07 	call	0xe30	; 0xe30 <Internal_writeByte>
+     472:	83 ec       	ldi	r24, 0xC3	; 195
+     474:	99 e0       	ldi	r25, 0x09	; 9
+     476:	01 97       	sbiw	r24, 0x01	; 1
+     478:	f1 f7       	brne	.-4      	; 0x476 <__EEPROM_REGION_LENGTH__+0x76>
+     47a:	00 c0       	rjmp	.+0      	; 0x47c <__EEPROM_REGION_LENGTH__+0x7c>
+     47c:	00 00       	nop
+	_delay_ms(10);
+
+	/*clear the screen*/
+	LCD_clearScreen();
+     47e:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	/*display that the password is saved in EEPROM*/
+	LCD_moveCursor(0,0);
+     482:	60 e0       	ldi	r22, 0x00	; 0
+     484:	80 e0       	ldi	r24, 0x00	; 0
+     486:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("Admin Pass saved");
+     48a:	84 e9       	ldi	r24, 0x94	; 148
+     48c:	90 e0       	ldi	r25, 0x00	; 0
+     48e:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     492:	9f e3       	ldi	r25, 0x3F	; 63
+     494:	2d e0       	ldi	r18, 0x0D	; 13
+     496:	83 e0       	ldi	r24, 0x03	; 3
+     498:	91 50       	subi	r25, 0x01	; 1
+     49a:	20 40       	sbci	r18, 0x00	; 0
+     49c:	80 40       	sbci	r24, 0x00	; 0
+     49e:	e1 f7       	brne	.-8      	; 0x498 <__EEPROM_REGION_LENGTH__+0x98>
+     4a0:	00 c0       	rjmp	.+0      	; 0x4a2 <__EEPROM_REGION_LENGTH__+0xa2>
+     4a2:	00 00       	nop
+	_delay_ms(1000);
+
+
+	/*configurations for set the password the Guest*/
+	LCD_moveCursor(0,0);
+     4a4:	60 e0       	ldi	r22, 0x00	; 0
+     4a6:	80 e0       	ldi	r24, 0x00	; 0
+     4a8:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("Set Guest Pass");
+     4ac:	85 ea       	ldi	r24, 0xA5	; 165
+     4ae:	90 e0       	ldi	r25, 0x00	; 0
+     4b0:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	LCD_moveCursor(1,0);
+     4b4:	60 e0       	ldi	r22, 0x00	; 0
+     4b6:	81 e0       	ldi	r24, 0x01	; 1
+     4b8:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("Guest Pass:");
+     4bc:	84 eb       	ldi	r24, 0xB4	; 180
+     4be:	90 e0       	ldi	r25, 0x00	; 0
+     4c0:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	for(i=0;i<NO_OF_DIGIT;i++){
+     4c4:	c0 e0       	ldi	r28, 0x00	; 0
+     4c6:	d0 e0       	ldi	r29, 0x00	; 0
+     4c8:	1c c0       	rjmp	.+56     	; 0x502 <__EEPROM_REGION_LENGTH__+0x102>
+		/*get the digit from user*/
+		digit=KEYPAD_getPressedKey();
+     4ca:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+     4ce:	18 2f       	mov	r17, r24
+		/*display (*) instead the real digit*/
+		LCD_displayCharacter('*');
+     4d0:	8a e2       	ldi	r24, 0x2A	; 42
+     4d2:	0e 94 09 08 	call	0x1012	; 0x1012 <LCD_displayCharacter>
+     4d6:	9f e9       	ldi	r25, 0x9F	; 159
+     4d8:	26 e8       	ldi	r18, 0x86	; 134
+     4da:	81 e0       	ldi	r24, 0x01	; 1
+     4dc:	91 50       	subi	r25, 0x01	; 1
+     4de:	20 40       	sbci	r18, 0x00	; 0
+     4e0:	80 40       	sbci	r24, 0x00	; 0
+     4e2:	e1 f7       	brne	.-8      	; 0x4dc <__EEPROM_REGION_LENGTH__+0xdc>
+     4e4:	00 c0       	rjmp	.+0      	; 0x4e6 <__EEPROM_REGION_LENGTH__+0xe6>
+     4e6:	00 00       	nop
+		/*press delay*/
+		_delay_ms(500);
+		/*save this number to EEPROM*/
+		Internal_writeByte((GUEST_PASS_FIRST_LOCATION+i),digit);
+     4e8:	61 2f       	mov	r22, r17
+     4ea:	70 e0       	ldi	r23, 0x00	; 0
+     4ec:	ce 01       	movw	r24, r28
+     4ee:	46 96       	adiw	r24, 0x16	; 22
+     4f0:	0e 94 18 07 	call	0xe30	; 0xe30 <Internal_writeByte>
+     4f4:	83 ec       	ldi	r24, 0xC3	; 195
+     4f6:	99 e0       	ldi	r25, 0x09	; 9
+     4f8:	01 97       	sbiw	r24, 0x01	; 1
+     4fa:	f1 f7       	brne	.-4      	; 0x4f8 <__EEPROM_REGION_LENGTH__+0xf8>
+     4fc:	00 c0       	rjmp	.+0      	; 0x4fe <__EEPROM_REGION_LENGTH__+0xfe>
+     4fe:	00 00       	nop
+	/*configurations for set the password the Guest*/
+	LCD_moveCursor(0,0);
+	LCD_displayString("Set Guest Pass");
+	LCD_moveCursor(1,0);
+	LCD_displayString("Guest Pass:");
+	for(i=0;i<NO_OF_DIGIT;i++){
+     500:	21 96       	adiw	r28, 0x01	; 1
+     502:	c3 30       	cpi	r28, 0x03	; 3
+     504:	d1 05       	cpc	r29, r1
+     506:	08 f3       	brcs	.-62     	; 0x4ca <__EEPROM_REGION_LENGTH__+0xca>
+	 * this location if it contain this number or not
+	 * if it not contain this number --->this is mean set password not done
+	 * if it contained this number(15)-->this is mean we don't need
+	 * this step any more
+	 */
+	Internal_writeByte(GUEST_LOCATION_CHECK,PASS_SET);
+     508:	61 e0       	ldi	r22, 0x01	; 1
+     50a:	70 e0       	ldi	r23, 0x00	; 0
+     50c:	81 e3       	ldi	r24, 0x31	; 49
+     50e:	90 e0       	ldi	r25, 0x00	; 0
+     510:	0e 94 18 07 	call	0xe30	; 0xe30 <Internal_writeByte>
+     514:	83 ec       	ldi	r24, 0xC3	; 195
+     516:	99 e0       	ldi	r25, 0x09	; 9
+     518:	01 97       	sbiw	r24, 0x01	; 1
+     51a:	f1 f7       	brne	.-4      	; 0x518 <__EEPROM_REGION_LENGTH__+0x118>
+     51c:	00 c0       	rjmp	.+0      	; 0x51e <__EEPROM_REGION_LENGTH__+0x11e>
+     51e:	00 00       	nop
+	_delay_ms(10);
+	/*clear the screen*/
+	LCD_clearScreen();
+     520:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	/*move the cursor to this location row=0 column=0*/
+	LCD_moveCursor(0,0);
+     524:	60 e0       	ldi	r22, 0x00	; 0
+     526:	80 e0       	ldi	r24, 0x00	; 0
+     528:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("Guest Pass saved");
+     52c:	80 ec       	ldi	r24, 0xC0	; 192
+     52e:	90 e0       	ldi	r25, 0x00	; 0
+     530:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     534:	9f e3       	ldi	r25, 0x3F	; 63
+     536:	2d e0       	ldi	r18, 0x0D	; 13
+     538:	83 e0       	ldi	r24, 0x03	; 3
+     53a:	91 50       	subi	r25, 0x01	; 1
+     53c:	20 40       	sbci	r18, 0x00	; 0
+     53e:	80 40       	sbci	r24, 0x00	; 0
+     540:	e1 f7       	brne	.-8      	; 0x53a <__EEPROM_REGION_LENGTH__+0x13a>
+     542:	00 c0       	rjmp	.+0      	; 0x544 <__EEPROM_REGION_LENGTH__+0x144>
+     544:	00 00       	nop
+	_delay_ms(1000);
+
+}
+     546:	df 91       	pop	r29
+     548:	cf 91       	pop	r28
+     54a:	1f 91       	pop	r17
+     54c:	08 95       	ret
+
+0000054e <select_mode>:
+ *
+ */
+void select_mode(void){
+    //volatile uint8 mode;
+	/*clear the screen*/
+	LCD_clearScreen();
+     54e:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	/*move cursor to this location -->first row and first column*/
+	LCD_moveCursor(0,0);
+     552:	60 e0       	ldi	r22, 0x00	; 0
+     554:	80 e0       	ldi	r24, 0x00	; 0
+     556:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	/*display both modes so the user can select the mode that he want*/
+	LCD_displayString("Select Mode:-");
+     55a:	81 ed       	ldi	r24, 0xD1	; 209
+     55c:	90 e0       	ldi	r25, 0x00	; 0
+     55e:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	LCD_moveCursor(1,0);
+     562:	60 e0       	ldi	r22, 0x00	; 0
+     564:	81 e0       	ldi	r24, 0x01	; 1
+     566:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("0:Admin  1:Guest");
+     56a:	8f ed       	ldi	r24, 0xDF	; 223
+     56c:	90 e0       	ldi	r25, 0x00	; 0
+     56e:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+    /*wait till the user select one mode from both by using keypad*/
+	g_mode= KEYPAD_getPressedKey();
+     572:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+     576:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <g_mode>
+     57a:	2f e9       	ldi	r18, 0x9F	; 159
+     57c:	86 e8       	ldi	r24, 0x86	; 134
+     57e:	91 e0       	ldi	r25, 0x01	; 1
+     580:	21 50       	subi	r18, 0x01	; 1
+     582:	80 40       	sbci	r24, 0x00	; 0
+     584:	90 40       	sbci	r25, 0x00	; 0
+     586:	e1 f7       	brne	.-8      	; 0x580 <select_mode+0x32>
+     588:	00 c0       	rjmp	.+0      	; 0x58a <select_mode+0x3c>
+     58a:	00 00       	nop
+     58c:	08 95       	ret
+
+0000058e <check_pass>:
+ * Function_Name:check_pass_guest
+ *
+ * description:to check  the password for guest is correct or not
+ *
+ */
+uint8 check_pass(uint8 mode){
+     58e:	1f 93       	push	r17
+     590:	cf 93       	push	r28
+     592:	df 93       	push	r29
+     594:	00 d0       	rcall	.+0      	; 0x596 <check_pass+0x8>
+     596:	00 d0       	rcall	.+0      	; 0x598 <check_pass+0xa>
+     598:	1f 92       	push	r1
+     59a:	cd b7       	in	r28, 0x3d	; 61
+     59c:	de b7       	in	r29, 0x3e	; 62
+     59e:	18 2f       	mov	r17, r24
+	/*hold the count for (for loop)*/
+	volatile uint16 i;
+	/*hold the digit from guest*/
+	volatile uint8 digit=0;
+     5a0:	1b 82       	std	Y+3, r1	; 0x03
+	/*to hold the digit that come from EEPROM*/
+	volatile uint8 data;
+	/*used for check if any digit in password wrong*/
+	/*default the password correct*/
+	volatile uint8 password_check=0;
+     5a2:	1d 82       	std	Y+5, r1	; 0x05
+    /*clear the screen*/
+	LCD_clearScreen();
+     5a4:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	/*move the cursor to first row and first column*/
+	LCD_moveCursor(0,0);
+     5a8:	60 e0       	ldi	r22, 0x00	; 0
+     5aa:	80 e0       	ldi	r24, 0x00	; 0
+     5ac:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	/*asked the user to enter the guest password*/
+	LCD_displayString("plz enter pass");
+     5b0:	80 ef       	ldi	r24, 0xF0	; 240
+     5b2:	90 e0       	ldi	r25, 0x00	; 0
+     5b4:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	/*move the cursor to second row and first column*/
+	LCD_moveCursor(1,0);
+     5b8:	60 e0       	ldi	r22, 0x00	; 0
+     5ba:	81 e0       	ldi	r24, 0x01	; 1
+     5bc:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("Enter pass:");
+     5c0:	8f ef       	ldi	r24, 0xFF	; 255
+     5c2:	90 e0       	ldi	r25, 0x00	; 0
+     5c4:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	/*loop to  receive the four digit from guest (password)*/
+	for(i=0;i<NO_OF_DIGIT;i++){
+     5c8:	1a 82       	std	Y+2, r1	; 0x02
+     5ca:	19 82       	std	Y+1, r1	; 0x01
+     5cc:	36 c0       	rjmp	.+108    	; 0x63a <check_pass+0xac>
+		/*get the digits that represent the password*/
+		digit=KEYPAD_getPressedKey();
+     5ce:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+     5d2:	8b 83       	std	Y+3, r24	; 0x03
+		/*display (*) instead the real digit*/
+		LCD_displayCharacter('*');
+     5d4:	8a e2       	ldi	r24, 0x2A	; 42
+     5d6:	0e 94 09 08 	call	0x1012	; 0x1012 <LCD_displayCharacter>
+     5da:	2f e9       	ldi	r18, 0x9F	; 159
+     5dc:	86 e8       	ldi	r24, 0x86	; 134
+     5de:	91 e0       	ldi	r25, 0x01	; 1
+     5e0:	21 50       	subi	r18, 0x01	; 1
+     5e2:	80 40       	sbci	r24, 0x00	; 0
+     5e4:	90 40       	sbci	r25, 0x00	; 0
+     5e6:	e1 f7       	brne	.-8      	; 0x5e0 <check_pass+0x52>
+     5e8:	00 c0       	rjmp	.+0      	; 0x5ea <check_pass+0x5c>
+     5ea:	00 00       	nop
+		/*press delay*/
+		_delay_ms(500);
+
+		if(mode==ADMIN){
+     5ec:	11 11       	cpse	r17, r1
+     5ee:	0d c0       	rjmp	.+26     	; 0x60a <check_pass+0x7c>
+			/*get the digit that is saved in this location from eeprom*/
+			data=Internal_readByte((ADMIN_PASS_FIRST_LOCATION+i));
+     5f0:	89 81       	ldd	r24, Y+1	; 0x01
+     5f2:	9a 81       	ldd	r25, Y+2	; 0x02
+     5f4:	40 96       	adiw	r24, 0x10	; 16
+     5f6:	0e 94 2a 07 	call	0xe54	; 0xe54 <Internal_readByte>
+     5fa:	8c 83       	std	Y+4, r24	; 0x04
+     5fc:	83 ec       	ldi	r24, 0xC3	; 195
+     5fe:	99 e0       	ldi	r25, 0x09	; 9
+     600:	01 97       	sbiw	r24, 0x01	; 1
+     602:	f1 f7       	brne	.-4      	; 0x600 <check_pass+0x72>
+     604:	00 c0       	rjmp	.+0      	; 0x606 <check_pass+0x78>
+     606:	00 00       	nop
+     608:	0c c0       	rjmp	.+24     	; 0x622 <check_pass+0x94>
+			_delay_ms(10);
+		}
+		/**if the system in guest mode*/
+		else{
+			/*get the digit that is saved in this location from eeprom*/
+			data=Internal_readByte((GUEST_PASS_FIRST_LOCATION+i));
+     60a:	89 81       	ldd	r24, Y+1	; 0x01
+     60c:	9a 81       	ldd	r25, Y+2	; 0x02
+     60e:	46 96       	adiw	r24, 0x16	; 22
+     610:	0e 94 2a 07 	call	0xe54	; 0xe54 <Internal_readByte>
+     614:	8c 83       	std	Y+4, r24	; 0x04
+     616:	83 ec       	ldi	r24, 0xC3	; 195
+     618:	99 e0       	ldi	r25, 0x09	; 9
+     61a:	01 97       	sbiw	r24, 0x01	; 1
+     61c:	f1 f7       	brne	.-4      	; 0x61a <check_pass+0x8c>
+     61e:	00 c0       	rjmp	.+0      	; 0x620 <check_pass+0x92>
+     620:	00 00       	nop
+			_delay_ms(10);
+		}
+
+
+		if(digit != data){
+     622:	9b 81       	ldd	r25, Y+3	; 0x03
+     624:	8c 81       	ldd	r24, Y+4	; 0x04
+     626:	98 17       	cp	r25, r24
+     628:	19 f0       	breq	.+6      	; 0x630 <check_pass+0xa2>
+		/*if enter here at least one time this mean pass is wrong*/
+			password_check++;
+     62a:	8d 81       	ldd	r24, Y+5	; 0x05
+     62c:	8f 5f       	subi	r24, 0xFF	; 255
+     62e:	8d 83       	std	Y+5, r24	; 0x05
+	LCD_displayString("plz enter pass");
+	/*move the cursor to second row and first column*/
+	LCD_moveCursor(1,0);
+	LCD_displayString("Enter pass:");
+	/*loop to  receive the four digit from guest (password)*/
+	for(i=0;i<NO_OF_DIGIT;i++){
+     630:	89 81       	ldd	r24, Y+1	; 0x01
+     632:	9a 81       	ldd	r25, Y+2	; 0x02
+     634:	01 96       	adiw	r24, 0x01	; 1
+     636:	9a 83       	std	Y+2, r25	; 0x02
+     638:	89 83       	std	Y+1, r24	; 0x01
+     63a:	89 81       	ldd	r24, Y+1	; 0x01
+     63c:	9a 81       	ldd	r25, Y+2	; 0x02
+     63e:	03 97       	sbiw	r24, 0x03	; 3
+     640:	30 f2       	brcs	.-116    	; 0x5ce <check_pass+0x40>
+			password_check++;
+		}
+	}
+
+	/*to known that password is correct or not*/
+	return password_check;
+     642:	8d 81       	ldd	r24, Y+5	; 0x05
+}
+     644:	0f 90       	pop	r0
+     646:	0f 90       	pop	r0
+     648:	0f 90       	pop	r0
+     64a:	0f 90       	pop	r0
+     64c:	0f 90       	pop	r0
+     64e:	df 91       	pop	r29
+     650:	cf 91       	pop	r28
+     652:	1f 91       	pop	r17
+     654:	08 95       	ret
+
+00000656 <wrong_passwords>:
+ */
+
+
+
+void wrong_passwords(void){
+	left_times--;
+     656:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <left_times>
+     65a:	81 50       	subi	r24, 0x01	; 1
+     65c:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <left_times>
+	/*Clean the Screen of LCD*/
+	LCD_clearScreen();
+     660:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	/*display this messages on screen*/
+	LCD_displayString("Wrong password");
+     664:	8b e0       	ldi	r24, 0x0B	; 11
+     666:	91 e0       	ldi	r25, 0x01	; 1
+     668:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	LCD_moveCursor(1,0);
+     66c:	60 e0       	ldi	r22, 0x00	; 0
+     66e:	81 e0       	ldi	r24, 0x01	; 1
+     670:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("left times :");
+     674:	8a e1       	ldi	r24, 0x1A	; 26
+     676:	91 e0       	ldi	r25, 0x01	; 1
+     678:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	LCD_displayCharacter(left_times + ASCII_ZERO);
+     67c:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <left_times>
+     680:	80 5d       	subi	r24, 0xD0	; 208
+     682:	0e 94 09 08 	call	0x1012	; 0x1012 <LCD_displayCharacter>
+     686:	2f e3       	ldi	r18, 0x3F	; 63
+     688:	8d e0       	ldi	r24, 0x0D	; 13
+     68a:	93 e0       	ldi	r25, 0x03	; 3
+     68c:	21 50       	subi	r18, 0x01	; 1
+     68e:	80 40       	sbci	r24, 0x00	; 0
+     690:	90 40       	sbci	r25, 0x00	; 0
+     692:	e1 f7       	brne	.-8      	; 0x68c <wrong_passwords+0x36>
+     694:	00 c0       	rjmp	.+0      	; 0x696 <wrong_passwords+0x40>
+     696:	00 00       	nop
+     698:	08 95       	ret
+
+0000069a <Admin_First_access>:
+ * Function_Name:Admin_access
+ *
+ * description:to access the whole home (first window)
+ *
+ */
+uint8 Admin_First_access(void){
+     69a:	cf 93       	push	r28
+	/*to indicate if the first time to the admin that he enter the option*/
+	uint8 count=0;
+	/*to hold the option that the admin selected*/
+	uint8 admin1_opt;
+	/*clear the screen*/
+	LCD_clearScreen();
+     69c:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	/*move the cursor to first row and first column*/
+	LCD_moveCursor(0,0);
+     6a0:	60 e0       	ldi	r22, 0x00	; 0
+     6a2:	80 e0       	ldi	r24, 0x00	; 0
+     6a4:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	/*display the available options for the guest*/
+	LCD_displayString("1:Room1  2:Room2");
+     6a8:	87 e2       	ldi	r24, 0x27	; 39
+     6aa:	91 e0       	ldi	r25, 0x01	; 1
+     6ac:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	LCD_moveCursor(1,0);
+     6b0:	60 e0       	ldi	r22, 0x00	; 0
+     6b2:	81 e0       	ldi	r24, 0x01	; 1
+     6b4:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("3:Room3  4:More");
+     6b8:	88 e3       	ldi	r24, 0x38	; 56
+     6ba:	91 e0       	ldi	r25, 0x01	; 1
+     6bc:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+ * description:to access the whole home (first window)
+ *
+ */
+uint8 Admin_First_access(void){
+	/*to indicate if the first time to the admin that he enter the option*/
+	uint8 count=0;
+     6c0:	c0 e0       	ldi	r28, 0x00	; 0
+	LCD_displayString("1:Room1  2:Room2");
+	LCD_moveCursor(1,0);
+	LCD_displayString("3:Room3  4:More");
+/*this loop only to handle if the user enter input among the options*/
+	do {
+		if(count>0){
+     6c2:	cc 23       	and	r28, r28
+     6c4:	e9 f0       	breq	.+58     	; 0x700 <Admin_First_access+0x66>
+			/*clear the screen*/
+			LCD_clearScreen();
+     6c6:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+			/*display the available options for the guest*/
+			LCD_displayString("Wrong input");
+     6ca:	88 e4       	ldi	r24, 0x48	; 72
+     6cc:	91 e0       	ldi	r25, 0x01	; 1
+     6ce:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     6d2:	2f e9       	ldi	r18, 0x9F	; 159
+     6d4:	36 e8       	ldi	r19, 0x86	; 134
+     6d6:	81 e0       	ldi	r24, 0x01	; 1
+     6d8:	21 50       	subi	r18, 0x01	; 1
+     6da:	30 40       	sbci	r19, 0x00	; 0
+     6dc:	80 40       	sbci	r24, 0x00	; 0
+     6de:	e1 f7       	brne	.-8      	; 0x6d8 <Admin_First_access+0x3e>
+     6e0:	00 c0       	rjmp	.+0      	; 0x6e2 <Admin_First_access+0x48>
+     6e2:	00 00       	nop
+			/*delay 0.5 second so the user can see it*/
+			_delay_ms(500);
+			/*clear the screen*/
+			LCD_clearScreen();
+     6e4:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+			/*display the available options for the guest*/
+			LCD_displayString("1:Room1  2:Room2");
+     6e8:	87 e2       	ldi	r24, 0x27	; 39
+     6ea:	91 e0       	ldi	r25, 0x01	; 1
+     6ec:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+			LCD_moveCursor(1,0);
+     6f0:	60 e0       	ldi	r22, 0x00	; 0
+     6f2:	81 e0       	ldi	r24, 0x01	; 1
+     6f4:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+			LCD_displayString("3:Room3  4:More");
+     6f8:	88 e3       	ldi	r24, 0x38	; 56
+     6fa:	91 e0       	ldi	r25, 0x01	; 1
+     6fc:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+			
+		}
+		/*get the option that the guest selected by using keypad*/
+		admin1_opt=KEYPAD_getPressedKey();
+     700:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+		count++;
+     704:	cf 5f       	subi	r28, 0xFF	; 255
+     706:	9f e9       	ldi	r25, 0x9F	; 159
+     708:	26 e8       	ldi	r18, 0x86	; 134
+     70a:	31 e0       	ldi	r19, 0x01	; 1
+     70c:	91 50       	subi	r25, 0x01	; 1
+     70e:	20 40       	sbci	r18, 0x00	; 0
+     710:	30 40       	sbci	r19, 0x00	; 0
+     712:	e1 f7       	brne	.-8      	; 0x70c <Admin_First_access+0x72>
+     714:	00 c0       	rjmp	.+0      	; 0x716 <Admin_First_access+0x7c>
+     716:	00 00       	nop
+		/*time pressed*/
+		_delay_ms(500);
+	}while(admin1_opt!=1 && admin1_opt!=2 && admin1_opt!=3 &&admin1_opt!=4);
+     718:	9f ef       	ldi	r25, 0xFF	; 255
+     71a:	98 0f       	add	r25, r24
+     71c:	94 30       	cpi	r25, 0x04	; 4
+     71e:	88 f6       	brcc	.-94     	; 0x6c2 <Admin_First_access+0x28>
+	/*return which room was selected by guest*/
+	return admin1_opt;
+}
+     720:	cf 91       	pop	r28
+     722:	08 95       	ret
+
+00000724 <Admin_Second_access>:
+ * Function_Name:Admin_access
+ *
+ * description:to access the whole home (second window)
+ *
+ */
+uint8 Admin_Second_access(void){
+     724:	cf 93       	push	r28
+	/*to indicate if the first time to the admin that he enter the option*/
+	uint8 count=0;
+	/*to hold the option that the guest selected*/
+	uint8 admin2_opt;
+	/*clear the screen*/
+	LCD_clearScreen();
+     726:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	/*move the cursor to first row and first column*/
+	LCD_moveCursor(0,0);
+     72a:	60 e0       	ldi	r22, 0x00	; 0
+     72c:	80 e0       	ldi	r24, 0x00	; 0
+     72e:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	/*display the available options for the guest*/
+	LCD_displayString("1:Room4  2:TV");
+     732:	84 e5       	ldi	r24, 0x54	; 84
+     734:	91 e0       	ldi	r25, 0x01	; 1
+     736:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	LCD_moveCursor(1,0);
+     73a:	60 e0       	ldi	r22, 0x00	; 0
+     73c:	81 e0       	ldi	r24, 0x01	; 1
+     73e:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("3:Air_Cond 4:RET");
+     742:	82 e6       	ldi	r24, 0x62	; 98
+     744:	91 e0       	ldi	r25, 0x01	; 1
+     746:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+ * description:to access the whole home (second window)
+ *
+ */
+uint8 Admin_Second_access(void){
+	/*to indicate if the first time to the admin that he enter the option*/
+	uint8 count=0;
+     74a:	c0 e0       	ldi	r28, 0x00	; 0
+	LCD_displayString("1:Room4  2:TV");
+	LCD_moveCursor(1,0);
+	LCD_displayString("3:Air_Cond 4:RET");
+/*this loop only to handle if the user enter input among the options*/
+	do {
+		if(count>0){
+     74c:	cc 23       	and	r28, r28
+     74e:	f9 f0       	breq	.+62     	; 0x78e <Admin_Second_access+0x6a>
+			/*clear the screen*/
+			LCD_clearScreen();
+     750:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+			/*display the available options for the guest*/
+			LCD_displayString("Wrong input");
+     754:	88 e4       	ldi	r24, 0x48	; 72
+     756:	91 e0       	ldi	r25, 0x01	; 1
+     758:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     75c:	2f e9       	ldi	r18, 0x9F	; 159
+     75e:	36 e8       	ldi	r19, 0x86	; 134
+     760:	81 e0       	ldi	r24, 0x01	; 1
+     762:	21 50       	subi	r18, 0x01	; 1
+     764:	30 40       	sbci	r19, 0x00	; 0
+     766:	80 40       	sbci	r24, 0x00	; 0
+     768:	e1 f7       	brne	.-8      	; 0x762 <Admin_Second_access+0x3e>
+     76a:	00 c0       	rjmp	.+0      	; 0x76c <Admin_Second_access+0x48>
+     76c:	00 00       	nop
+			/*delay 0.5 second so the user can see it*/
+			_delay_ms(500);
+			/*move the cursor to first row and first column*/
+			LCD_moveCursor(0,0);
+     76e:	60 e0       	ldi	r22, 0x00	; 0
+     770:	80 e0       	ldi	r24, 0x00	; 0
+     772:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+			/*display the available options for the guest*/
+			LCD_displayString("1:Room4  2:TV");
+     776:	84 e5       	ldi	r24, 0x54	; 84
+     778:	91 e0       	ldi	r25, 0x01	; 1
+     77a:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+			LCD_moveCursor(1,0);
+     77e:	60 e0       	ldi	r22, 0x00	; 0
+     780:	81 e0       	ldi	r24, 0x01	; 1
+     782:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+			LCD_displayString("3:Air_Cond 4:RET");
+     786:	82 e6       	ldi	r24, 0x62	; 98
+     788:	91 e0       	ldi	r25, 0x01	; 1
+     78a:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+		}
+		/*get the option that the guest selected by using keypad*/
+		admin2_opt=KEYPAD_getPressedKey();
+     78e:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+		count++;
+     792:	cf 5f       	subi	r28, 0xFF	; 255
+     794:	9f e9       	ldi	r25, 0x9F	; 159
+     796:	26 e8       	ldi	r18, 0x86	; 134
+     798:	31 e0       	ldi	r19, 0x01	; 1
+     79a:	91 50       	subi	r25, 0x01	; 1
+     79c:	20 40       	sbci	r18, 0x00	; 0
+     79e:	30 40       	sbci	r19, 0x00	; 0
+     7a0:	e1 f7       	brne	.-8      	; 0x79a <Admin_Second_access+0x76>
+     7a2:	00 c0       	rjmp	.+0      	; 0x7a4 <Admin_Second_access+0x80>
+     7a4:	00 00       	nop
+		/*time pressed*/
+		_delay_ms(500);
+	}while(admin2_opt!=1 && admin2_opt!=2 && admin2_opt!=3 && admin2_opt!=4);
+     7a6:	9f ef       	ldi	r25, 0xFF	; 255
+     7a8:	98 0f       	add	r25, r24
+     7aa:	94 30       	cpi	r25, 0x04	; 4
+     7ac:	78 f6       	brcc	.-98     	; 0x74c <Admin_Second_access+0x28>
+	/*return which room was selected by guest*/
+	return admin2_opt;
+}
+     7ae:	cf 91       	pop	r28
+     7b0:	08 95       	ret
+
+000007b2 <Guest_access>:
+ * Function_Name:guest_access
+ *
+ * description:to access the home_rooms only
+ *
+ */
+uint8 Guest_access(void){
+     7b2:	cf 93       	push	r28
+     7b4:	df 93       	push	r29
+     7b6:	00 d0       	rcall	.+0      	; 0x7b8 <Guest_access+0x6>
+     7b8:	1f 92       	push	r1
+     7ba:	cd b7       	in	r28, 0x3d	; 61
+     7bc:	de b7       	in	r29, 0x3e	; 62
+	/*to indicate if the first time to the guest that he enter the option*/
+	volatile count=0;
+     7be:	1a 82       	std	Y+2, r1	; 0x02
+     7c0:	19 82       	std	Y+1, r1	; 0x01
+	/*to hold the option that the guest selected*/
+	volatile uint8 guest_option;
+	/*clear the screen*/
+	LCD_clearScreen();
+     7c2:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	/*move the cursor to first row and first column*/
+	LCD_moveCursor(0,0);
+     7c6:	60 e0       	ldi	r22, 0x00	; 0
+     7c8:	80 e0       	ldi	r24, 0x00	; 0
+     7ca:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	/*display the available options for the guest*/
+	LCD_displayString("1:Room1  2:Room2");
+     7ce:	87 e2       	ldi	r24, 0x27	; 39
+     7d0:	91 e0       	ldi	r25, 0x01	; 1
+     7d2:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	LCD_moveCursor(1,0);
+     7d6:	60 e0       	ldi	r22, 0x00	; 0
+     7d8:	81 e0       	ldi	r24, 0x01	; 1
+     7da:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("3:Room3  4:Room4");
+     7de:	83 e7       	ldi	r24, 0x73	; 115
+     7e0:	91 e0       	ldi	r25, 0x01	; 1
+     7e2:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+/*this loop only to handle if the user enter input among the options*/
+	do {
+		if(count>0){
+     7e6:	89 81       	ldd	r24, Y+1	; 0x01
+     7e8:	9a 81       	ldd	r25, Y+2	; 0x02
+     7ea:	18 16       	cp	r1, r24
+     7ec:	19 06       	cpc	r1, r25
+     7ee:	fc f4       	brge	.+62     	; 0x82e <__DATA_REGION_LENGTH__+0x2e>
+			/*clear the screen*/
+			LCD_clearScreen();
+     7f0:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+			/*display the available options for the guest*/
+			LCD_displayString("Wrong input");
+     7f4:	88 e4       	ldi	r24, 0x48	; 72
+     7f6:	91 e0       	ldi	r25, 0x01	; 1
+     7f8:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     7fc:	2f e9       	ldi	r18, 0x9F	; 159
+     7fe:	86 e8       	ldi	r24, 0x86	; 134
+     800:	91 e0       	ldi	r25, 0x01	; 1
+     802:	21 50       	subi	r18, 0x01	; 1
+     804:	80 40       	sbci	r24, 0x00	; 0
+     806:	90 40       	sbci	r25, 0x00	; 0
+     808:	e1 f7       	brne	.-8      	; 0x802 <__DATA_REGION_LENGTH__+0x2>
+     80a:	00 c0       	rjmp	.+0      	; 0x80c <__DATA_REGION_LENGTH__+0xc>
+     80c:	00 00       	nop
+			/*delay 0.5 second so the user can see it*/
+			_delay_ms(500);
+			/*clear the screen*/
+			LCD_clearScreen();
+     80e:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+			/*display the available options for the guest*/
+			LCD_displayString("1:Room1  2:Room2");
+     812:	87 e2       	ldi	r24, 0x27	; 39
+     814:	91 e0       	ldi	r25, 0x01	; 1
+     816:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+			LCD_moveCursor(1,0);
+     81a:	60 e0       	ldi	r22, 0x00	; 0
+     81c:	81 e0       	ldi	r24, 0x01	; 1
+     81e:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+			LCD_displayString("3:Room3  4:Room4");
+     822:	83 e7       	ldi	r24, 0x73	; 115
+     824:	91 e0       	ldi	r25, 0x01	; 1
+     826:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+			count=0;
+     82a:	1a 82       	std	Y+2, r1	; 0x02
+     82c:	19 82       	std	Y+1, r1	; 0x01
+		}
+		/*get the option that the guest selected by using keypad*/
+		guest_option=KEYPAD_getPressedKey();
+     82e:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+     832:	8b 83       	std	Y+3, r24	; 0x03
+     834:	2f e9       	ldi	r18, 0x9F	; 159
+     836:	86 e8       	ldi	r24, 0x86	; 134
+     838:	91 e0       	ldi	r25, 0x01	; 1
+     83a:	21 50       	subi	r18, 0x01	; 1
+     83c:	80 40       	sbci	r24, 0x00	; 0
+     83e:	90 40       	sbci	r25, 0x00	; 0
+     840:	e1 f7       	brne	.-8      	; 0x83a <__DATA_REGION_LENGTH__+0x3a>
+     842:	00 c0       	rjmp	.+0      	; 0x844 <__DATA_REGION_LENGTH__+0x44>
+     844:	00 00       	nop
+		/*time pressed*/
+		_delay_ms(500);
+		count++;
+     846:	89 81       	ldd	r24, Y+1	; 0x01
+     848:	9a 81       	ldd	r25, Y+2	; 0x02
+     84a:	01 96       	adiw	r24, 0x01	; 1
+     84c:	9a 83       	std	Y+2, r25	; 0x02
+     84e:	89 83       	std	Y+1, r24	; 0x01
+	}while((guest_option!=1) && (guest_option!=2) && (guest_option!=3) && (guest_option!=4));
+     850:	8b 81       	ldd	r24, Y+3	; 0x03
+     852:	81 30       	cpi	r24, 0x01	; 1
+     854:	51 f0       	breq	.+20     	; 0x86a <__stack+0xb>
+     856:	8b 81       	ldd	r24, Y+3	; 0x03
+     858:	82 30       	cpi	r24, 0x02	; 2
+     85a:	39 f0       	breq	.+14     	; 0x86a <__stack+0xb>
+     85c:	8b 81       	ldd	r24, Y+3	; 0x03
+     85e:	83 30       	cpi	r24, 0x03	; 3
+     860:	21 f0       	breq	.+8      	; 0x86a <__stack+0xb>
+     862:	8b 81       	ldd	r24, Y+3	; 0x03
+     864:	84 30       	cpi	r24, 0x04	; 4
+     866:	09 f0       	breq	.+2      	; 0x86a <__stack+0xb>
+     868:	be cf       	rjmp	.-132    	; 0x7e6 <Guest_access+0x34>
+	/*return which room was selected by guest*/
+	return guest_option;
+     86a:	8b 81       	ldd	r24, Y+3	; 0x03
+}
+     86c:	0f 90       	pop	r0
+     86e:	0f 90       	pop	r0
+     870:	0f 90       	pop	r0
+     872:	df 91       	pop	r29
+     874:	cf 91       	pop	r28
+     876:	08 95       	ret
+
+00000878 <Blocked_mode>:
+
+void Blocked_mode(void){
+	/*used to counter for loop and indicate for the seconds*/
+	uint8 count;
+	/*display the state of systems on lcd*/
+	LCD_clearScreen();
+     878:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	LCD_displayString("system Blocked");
+     87c:	84 e8       	ldi	r24, 0x84	; 132
+     87e:	91 e0       	ldi	r25, 0x01	; 1
+     880:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	/*to display the time on LCD*/
+	LCD_moveCursor(1,0);
+     884:	60 e0       	ldi	r22, 0x00	; 0
+     886:	81 e0       	ldi	r24, 0x01	; 1
+     888:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("wait 20 seconds");
+     88c:	83 e9       	ldi	r24, 0x93	; 147
+     88e:	91 e0       	ldi	r25, 0x01	; 1
+     890:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	/*Turn all led except the block led*/
+	/*turn on the led that represent the guest mode*/
+	LED_ON(BLOCK_PORT,BLOCK_PIN);
+     894:	62 e0       	ldi	r22, 0x02	; 2
+     896:	70 e0       	ldi	r23, 0x00	; 0
+     898:	82 e0       	ldi	r24, 0x02	; 2
+     89a:	90 e0       	ldi	r25, 0x00	; 0
+     89c:	0e 94 75 08 	call	0x10ea	; 0x10ea <LED_ON>
+	/*turn off the others led */
+	LED_OFF(ADMIN_PORT,ADMIN_PIN);
+     8a0:	60 e0       	ldi	r22, 0x00	; 0
+     8a2:	70 e0       	ldi	r23, 0x00	; 0
+     8a4:	82 e0       	ldi	r24, 0x02	; 2
+     8a6:	90 e0       	ldi	r25, 0x00	; 0
+     8a8:	0e 94 79 08 	call	0x10f2	; 0x10f2 <LED_OFF>
+	LED_OFF(GUEST_PORT,GUEST_PIN);
+     8ac:	61 e0       	ldi	r22, 0x01	; 1
+     8ae:	70 e0       	ldi	r23, 0x00	; 0
+     8b0:	82 e0       	ldi	r24, 0x02	; 2
+     8b2:	90 e0       	ldi	r25, 0x00	; 0
+     8b4:	0e 94 79 08 	call	0x10f2	; 0x10f2 <LED_OFF>
+	/*it is mean the user enter the block mode*/
+	Internal_writeByte(BLOCK_LOCATION_CHECK,1); 
+     8b8:	61 e0       	ldi	r22, 0x01	; 1
+     8ba:	70 e0       	ldi	r23, 0x00	; 0
+     8bc:	80 e4       	ldi	r24, 0x40	; 64
+     8be:	90 e0       	ldi	r25, 0x00	; 0
+     8c0:	0e 94 18 07 	call	0xe30	; 0xe30 <Internal_writeByte>
+	/*hold the systems for 20 seconds*/
+	for(count=0;count<20;count++){
+     8c4:	80 e0       	ldi	r24, 0x00	; 0
+     8c6:	0a c0       	rjmp	.+20     	; 0x8dc <Blocked_mode+0x64>
+     8c8:	2f e3       	ldi	r18, 0x3F	; 63
+     8ca:	3d e0       	ldi	r19, 0x0D	; 13
+     8cc:	93 e0       	ldi	r25, 0x03	; 3
+     8ce:	21 50       	subi	r18, 0x01	; 1
+     8d0:	30 40       	sbci	r19, 0x00	; 0
+     8d2:	90 40       	sbci	r25, 0x00	; 0
+     8d4:	e1 f7       	brne	.-8      	; 0x8ce <Blocked_mode+0x56>
+     8d6:	00 c0       	rjmp	.+0      	; 0x8d8 <Blocked_mode+0x60>
+     8d8:	00 00       	nop
+     8da:	8f 5f       	subi	r24, 0xFF	; 255
+     8dc:	84 31       	cpi	r24, 0x14	; 20
+     8de:	a0 f3       	brcs	.-24     	; 0x8c8 <Blocked_mode+0x50>
+		/*wait for 1 second */
+	  _delay_ms(1000);
+	}
+	/*this mean the block mode finished its time*/
+	Internal_writeByte(BLOCK_LOCATION_CHECK,0);
+     8e0:	60 e0       	ldi	r22, 0x00	; 0
+     8e2:	70 e0       	ldi	r23, 0x00	; 0
+     8e4:	80 e4       	ldi	r24, 0x40	; 64
+     8e6:	90 e0       	ldi	r25, 0x00	; 0
+     8e8:	0e 94 18 07 	call	0xe30	; 0xe30 <Internal_writeByte>
+	/*turn off the led that indicate Block mode */
+	LED_OFF(BLOCK_PORT,BLOCK_PIN); 
+     8ec:	62 e0       	ldi	r22, 0x02	; 2
+     8ee:	70 e0       	ldi	r23, 0x00	; 0
+     8f0:	82 e0       	ldi	r24, 0x02	; 2
+     8f2:	90 e0       	ldi	r25, 0x00	; 0
+     8f4:	0e 94 79 08 	call	0x10f2	; 0x10f2 <LED_OFF>
+     8f8:	08 95       	ret
+
+000008fa <Guest_menu>:
+ * Function_Name:Guest_menu
+ *
+ * description:to show the available  menu of Rooms
+ * and take parameter that represent the state of this object
+ */
+uint8 Guest_menu(uint8 object_state,uint8 no_of_room){
+     8fa:	cf 93       	push	r28
+     8fc:	df 93       	push	r29
+     8fe:	d8 2f       	mov	r29, r24
+     900:	c6 2f       	mov	r28, r22
+	uint8 room_req_state;
+	/*clean the screen of LCD*/
+	LCD_clearScreen();
+     902:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	/*this for room_1*/
+	if(no_of_room ==1){
+     906:	c1 30       	cpi	r28, 0x01	; 1
+     908:	71 f4       	brne	.+28     	; 0x926 <Guest_menu+0x2c>
+	    /*display the relative things of Room1*/
+	    if(object_state==LOGIC_HIGH){
+     90a:	d1 30       	cpi	r29, 0x01	; 1
+     90c:	29 f4       	brne	.+10     	; 0x918 <Guest_menu+0x1e>
+			LCD_displayString("ROOM1  s:ON");
+     90e:	83 ea       	ldi	r24, 0xA3	; 163
+     910:	91 e0       	ldi	r25, 0x01	; 1
+     912:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     916:	32 c0       	rjmp	.+100    	; 0x97c <Guest_menu+0x82>
+		}
+		else if(object_state==LOGIC_LOW){
+     918:	d1 11       	cpse	r29, r1
+     91a:	30 c0       	rjmp	.+96     	; 0x97c <Guest_menu+0x82>
+			LCD_displayString("ROOM1  s:OFF");
+     91c:	8f ea       	ldi	r24, 0xAF	; 175
+     91e:	91 e0       	ldi	r25, 0x01	; 1
+     920:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     924:	2b c0       	rjmp	.+86     	; 0x97c <Guest_menu+0x82>
+		}
+	}
+	/*This for Room_2*/
+	else if(no_of_room ==2){
+     926:	c2 30       	cpi	r28, 0x02	; 2
+     928:	71 f4       	brne	.+28     	; 0x946 <Guest_menu+0x4c>
+	    /*display the relative things of Room1*/
+	    if(object_state==LOGIC_HIGH){
+     92a:	d1 30       	cpi	r29, 0x01	; 1
+     92c:	29 f4       	brne	.+10     	; 0x938 <Guest_menu+0x3e>
+			LCD_displayString("ROOM2  s:ON");
+     92e:	8c eb       	ldi	r24, 0xBC	; 188
+     930:	91 e0       	ldi	r25, 0x01	; 1
+     932:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     936:	22 c0       	rjmp	.+68     	; 0x97c <Guest_menu+0x82>
+		}
+		else if(object_state==LOGIC_LOW){
+     938:	d1 11       	cpse	r29, r1
+     93a:	20 c0       	rjmp	.+64     	; 0x97c <Guest_menu+0x82>
+			LCD_displayString("ROOM2  s:OFF");
+     93c:	88 ec       	ldi	r24, 0xC8	; 200
+     93e:	91 e0       	ldi	r25, 0x01	; 1
+     940:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     944:	1b c0       	rjmp	.+54     	; 0x97c <Guest_menu+0x82>
+		}
+	}
+	/*This for Room_3*/
+	else if(no_of_room ==3){
+     946:	c3 30       	cpi	r28, 0x03	; 3
+     948:	61 f4       	brne	.+24     	; 0x962 <Guest_menu+0x68>
+	    /*display the relative things of Room1*/
+	    if(object_state==LOGIC_HIGH){
+     94a:	d1 30       	cpi	r29, 0x01	; 1
+     94c:	29 f4       	brne	.+10     	; 0x958 <Guest_menu+0x5e>
+			LCD_displayString("ROOM3  s:ON");
+     94e:	85 ed       	ldi	r24, 0xD5	; 213
+     950:	91 e0       	ldi	r25, 0x01	; 1
+     952:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     956:	12 c0       	rjmp	.+36     	; 0x97c <Guest_menu+0x82>
+		}
+		else{
+			LCD_displayString("ROOM3  s:OFF");
+     958:	81 ee       	ldi	r24, 0xE1	; 225
+     95a:	91 e0       	ldi	r25, 0x01	; 1
+     95c:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     960:	0d c0       	rjmp	.+26     	; 0x97c <Guest_menu+0x82>
+		}
+	}
+	/*This for Room_3*/
+	else if(no_of_room ==4){
+     962:	c4 30       	cpi	r28, 0x04	; 4
+     964:	59 f4       	brne	.+22     	; 0x97c <Guest_menu+0x82>
+	    /*display the relative things of Room1*/
+	    if(object_state==LOGIC_HIGH){
+     966:	d1 30       	cpi	r29, 0x01	; 1
+     968:	29 f4       	brne	.+10     	; 0x974 <Guest_menu+0x7a>
+			LCD_displayString("ROOM4  s:ON");
+     96a:	8e ee       	ldi	r24, 0xEE	; 238
+     96c:	91 e0       	ldi	r25, 0x01	; 1
+     96e:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     972:	04 c0       	rjmp	.+8      	; 0x97c <Guest_menu+0x82>
+		}
+		else{
+			LCD_displayString("ROOM4  s:OFF");
+     974:	8a ef       	ldi	r24, 0xFA	; 250
+     976:	91 e0       	ldi	r25, 0x01	; 1
+     978:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+		}
+	}
+	LCD_moveCursor(1,0);
+     97c:	60 e0       	ldi	r22, 0x00	; 0
+     97e:	81 e0       	ldi	r24, 0x01	; 1
+     980:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	/*display the available options*/
+	LCD_displayString("1:on  2:off 0:Ret");
+     984:	87 e0       	ldi	r24, 0x07	; 7
+     986:	92 e0       	ldi	r25, 0x02	; 2
+     988:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	/*get the required state from guest by using keypad*/
+	room_req_state=KEYPAD_getPressedKey();
+     98c:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+	/*return this key to use it for doing something else*/
+	return room_req_state;
+}
+     990:	df 91       	pop	r29
+     992:	cf 91       	pop	r28
+     994:	08 95       	ret
+
+00000996 <Admin1_menu>:
+* description:to show the available  menu of admin in first window
+*
+*/
+
+
+uint8 Admin1_menu(uint8 object_state,uint8 no_of_option){
+     996:	cf 93       	push	r28
+     998:	df 93       	push	r29
+     99a:	d8 2f       	mov	r29, r24
+     99c:	c6 2f       	mov	r28, r22
+	uint8 room_req_state;
+	/*clean the screen of LCD*/
+	LCD_clearScreen();
+     99e:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	/*this for room_1*/
+	if(no_of_option ==1){
+     9a2:	c1 30       	cpi	r28, 0x01	; 1
+     9a4:	71 f4       	brne	.+28     	; 0x9c2 <Admin1_menu+0x2c>
+		/*display the relative things of Room1*/
+		if(object_state==LOGIC_HIGH){
+     9a6:	d1 30       	cpi	r29, 0x01	; 1
+     9a8:	29 f4       	brne	.+10     	; 0x9b4 <Admin1_menu+0x1e>
+			LCD_displayString("ROOM1  s:ON");
+     9aa:	83 ea       	ldi	r24, 0xA3	; 163
+     9ac:	91 e0       	ldi	r25, 0x01	; 1
+     9ae:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     9b2:	22 c0       	rjmp	.+68     	; 0x9f8 <Admin1_menu+0x62>
+		}
+		else if(object_state==LOGIC_LOW){
+     9b4:	d1 11       	cpse	r29, r1
+     9b6:	20 c0       	rjmp	.+64     	; 0x9f8 <Admin1_menu+0x62>
+			LCD_displayString("ROOM1  s:OFF");
+     9b8:	8f ea       	ldi	r24, 0xAF	; 175
+     9ba:	91 e0       	ldi	r25, 0x01	; 1
+     9bc:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     9c0:	1b c0       	rjmp	.+54     	; 0x9f8 <Admin1_menu+0x62>
+		}
+	}
+	/*This for Room_2*/
+	else if(no_of_option ==2){
+     9c2:	c2 30       	cpi	r28, 0x02	; 2
+     9c4:	61 f4       	brne	.+24     	; 0x9de <Admin1_menu+0x48>
+	    /*display the relative things of Room1*/
+	    if(object_state==LOGIC_HIGH){
+     9c6:	d1 30       	cpi	r29, 0x01	; 1
+     9c8:	29 f4       	brne	.+10     	; 0x9d4 <Admin1_menu+0x3e>
+			LCD_displayString("Room 2  s:ON");
+     9ca:	89 e1       	ldi	r24, 0x19	; 25
+     9cc:	92 e0       	ldi	r25, 0x02	; 2
+     9ce:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     9d2:	12 c0       	rjmp	.+36     	; 0x9f8 <Admin1_menu+0x62>
+		}
+		else{
+			LCD_displayString("Room 2  s:OFF");
+     9d4:	86 e2       	ldi	r24, 0x26	; 38
+     9d6:	92 e0       	ldi	r25, 0x02	; 2
+     9d8:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     9dc:	0d c0       	rjmp	.+26     	; 0x9f8 <Admin1_menu+0x62>
+		}
+	}
+	/*This for Room_3*/
+	else if(no_of_option ==3){
+     9de:	c3 30       	cpi	r28, 0x03	; 3
+     9e0:	59 f4       	brne	.+22     	; 0x9f8 <Admin1_menu+0x62>
+	    /*display the relative things of Room1*/
+	    if(object_state==LOGIC_HIGH){
+     9e2:	d1 30       	cpi	r29, 0x01	; 1
+     9e4:	29 f4       	brne	.+10     	; 0x9f0 <Admin1_menu+0x5a>
+			LCD_displayString("Room 3  s:ON");
+     9e6:	84 e3       	ldi	r24, 0x34	; 52
+     9e8:	92 e0       	ldi	r25, 0x02	; 2
+     9ea:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     9ee:	04 c0       	rjmp	.+8      	; 0x9f8 <Admin1_menu+0x62>
+		}
+		else{
+			LCD_displayString("Room 3  s:OFF");
+     9f0:	81 e4       	ldi	r24, 0x41	; 65
+     9f2:	92 e0       	ldi	r25, 0x02	; 2
+     9f4:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+		}
+	}
+
+	LCD_moveCursor(1,0);
+     9f8:	60 e0       	ldi	r22, 0x00	; 0
+     9fa:	81 e0       	ldi	r24, 0x01	; 1
+     9fc:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	/*display the available options*/
+	LCD_displayString("1:on  2:off 0:Ret");
+     a00:	87 e0       	ldi	r24, 0x07	; 7
+     a02:	92 e0       	ldi	r25, 0x02	; 2
+     a04:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	/*get the required state from guest by using keypad*/
+	room_req_state=KEYPAD_getPressedKey();
+     a08:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+	/*return this key to use it for doing something else*/
+	return room_req_state;
+}
+     a0c:	df 91       	pop	r29
+     a0e:	cf 91       	pop	r28
+     a10:	08 95       	ret
+
+00000a12 <Admin2_menu>:
+* description:to show the available  menu of admin
+*
+*/
+
+
+uint8 Admin2_menu(uint8 object_state,uint8 no_of_option){
+     a12:	cf 93       	push	r28
+     a14:	df 93       	push	r29
+     a16:	d8 2f       	mov	r29, r24
+     a18:	c6 2f       	mov	r28, r22
+	/*to hold the required state of any object*/
+	uint8 req_state;
+	/*clean the screen of LCD*/
+	LCD_clearScreen();
+     a1a:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+	/*this for room_1*/
+	if(no_of_option ==1){
+     a1e:	c1 30       	cpi	r28, 0x01	; 1
+     a20:	61 f4       	brne	.+24     	; 0xa3a <Admin2_menu+0x28>
+	    /*display the relative things of Room1*/
+	    if(object_state==LOGIC_HIGH){
+     a22:	d1 30       	cpi	r29, 0x01	; 1
+     a24:	29 f4       	brne	.+10     	; 0xa30 <Admin2_menu+0x1e>
+			LCD_displayString("Room 4  s:ON");
+     a26:	8f e4       	ldi	r24, 0x4F	; 79
+     a28:	92 e0       	ldi	r25, 0x02	; 2
+     a2a:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     a2e:	12 c0       	rjmp	.+36     	; 0xa54 <Admin2_menu+0x42>
+		}
+		else{
+			LCD_displayString("Room 4  s:OFF");
+     a30:	8c e5       	ldi	r24, 0x5C	; 92
+     a32:	92 e0       	ldi	r25, 0x02	; 2
+     a34:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     a38:	0d c0       	rjmp	.+26     	; 0xa54 <Admin2_menu+0x42>
+		}
+	}
+	/*This for Room_2*/
+	else if(no_of_option ==2){
+     a3a:	c2 30       	cpi	r28, 0x02	; 2
+     a3c:	59 f4       	brne	.+22     	; 0xa54 <Admin2_menu+0x42>
+	    /*display the relative things of Room1*/
+	    if(object_state==LOGIC_HIGH){
+     a3e:	d1 30       	cpi	r29, 0x01	; 1
+     a40:	29 f4       	brne	.+10     	; 0xa4c <Admin2_menu+0x3a>
+			LCD_displayString("TV  s:ON");
+     a42:	8a e6       	ldi	r24, 0x6A	; 106
+     a44:	92 e0       	ldi	r25, 0x02	; 2
+     a46:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     a4a:	04 c0       	rjmp	.+8      	; 0xa54 <Admin2_menu+0x42>
+		}
+		else{
+			LCD_displayString("TV  s:OFF");
+     a4c:	83 e7       	ldi	r24, 0x73	; 115
+     a4e:	92 e0       	ldi	r25, 0x02	; 2
+     a50:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+		}
+	}
+
+	/*display the available options*/
+	LCD_moveCursor(1,0);
+     a54:	60 e0       	ldi	r22, 0x00	; 0
+     a56:	81 e0       	ldi	r24, 0x01	; 1
+     a58:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+	LCD_displayString("1:on  2:off 0:Ret");
+     a5c:	87 e0       	ldi	r24, 0x07	; 7
+     a5e:	92 e0       	ldi	r25, 0x02	; 2
+     a60:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+	/*get the required state from guest by using keypad*/
+	req_state=KEYPAD_getPressedKey();
+     a64:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+
+	/*return this key to use it for doing something else*/
+    return req_state;
+}
+     a68:	df 91       	pop	r29
+     a6a:	cf 91       	pop	r28
+     a6c:	08 95       	ret
+
+00000a6e <AirController_fun>:
+ * description:to handle the statements of Air Conditional
+ *
+ */
+
+
+uint8 AirController_fun(void){
+     a6e:	0f 93       	push	r16
+     a70:	1f 93       	push	r17
+     a72:	cf 93       	push	r28
+     a74:	df 93       	push	r29
+	/*to hold the state of air condition*/
+	uint8 obj_state;
+	/*of Air_options*/
+	uint8 Air_option;
+	/*that hold the wanted temperature*/
+	uint8 temp=0;
+     a76:	d0 e0       	ldi	r29, 0x00	; 0
+ */
+
+
+uint8 AirController_fun(void){
+	/*to hold the required state of Air condition*/
+	uint8 req_state=1;
+     a78:	01 e0       	ldi	r16, 0x01	; 1
+	/* to hold keypad input*/
+	uint8 keypad_input_temp=0;
+	/*count for loop*/
+	uint8 i;
+	do{
+		LCD_moveCursor(0,0);
+     a7a:	60 e0       	ldi	r22, 0x00	; 0
+     a7c:	80 e0       	ldi	r24, 0x00	; 0
+     a7e:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+		LCD_displayString("1:set temperature");
+     a82:	8d e7       	ldi	r24, 0x7D	; 125
+     a84:	92 e0       	ldi	r25, 0x02	; 2
+     a86:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+		LCD_moveCursor(1,0);
+     a8a:	60 e0       	ldi	r22, 0x00	; 0
+     a8c:	81 e0       	ldi	r24, 0x01	; 1
+     a8e:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+		LCD_displayString("2:Control  0:RET");
+     a92:	8f e8       	ldi	r24, 0x8F	; 143
+     a94:	92 e0       	ldi	r25, 0x02	; 2
+     a96:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+		/*get the required state from guest by using keypad*/
+		Air_option=KEYPAD_getPressedKey();
+     a9a:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+     a9e:	c8 2f       	mov	r28, r24
+     aa0:	87 ea       	ldi	r24, 0xA7	; 167
+     aa2:	91 e6       	ldi	r25, 0x61	; 97
+     aa4:	01 97       	sbiw	r24, 0x01	; 1
+     aa6:	f1 f7       	brne	.-4      	; 0xaa4 <AirController_fun+0x36>
+     aa8:	00 c0       	rjmp	.+0      	; 0xaaa <AirController_fun+0x3c>
+     aaa:	00 00       	nop
+		_delay_ms(100);
+		/*send this option to the other microcontroller*/
+		SPI_sendReciveByte(Air_option);
+     aac:	8c 2f       	mov	r24, r28
+     aae:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+     ab2:	87 ea       	ldi	r24, 0xA7	; 167
+     ab4:	91 e6       	ldi	r25, 0x61	; 97
+     ab6:	01 97       	sbiw	r24, 0x01	; 1
+     ab8:	f1 f7       	brne	.-4      	; 0xab6 <AirController_fun+0x48>
+     aba:	00 c0       	rjmp	.+0      	; 0xabc <AirController_fun+0x4e>
+     abc:	00 00       	nop
+		_delay_ms(100);
+		/*the user wants to set the temperature*/
+		if(Air_option==1){
+     abe:	c1 30       	cpi	r28, 0x01	; 1
+     ac0:	91 f5       	brne	.+100    	; 0xb26 <AirController_fun+0xb8>
+			LCD_clearScreen();
+     ac2:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+			LCD_displayString("set temp:-  C");
+     ac6:	80 ea       	ldi	r24, 0xA0	; 160
+     ac8:	92 e0       	ldi	r25, 0x02	; 2
+     aca:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+			/*move cursor of LCD to row 1 and column 11*/
+			LCD_moveCursor(0,10);
+     ace:	6a e0       	ldi	r22, 0x0A	; 10
+     ad0:	80 e0       	ldi	r24, 0x00	; 0
+     ad2:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+			/*to enter the temperature consist of two digit*/
+			for(i=0;i<2;i++){
+     ad6:	10 e0       	ldi	r17, 0x00	; 0
+     ad8:	17 c0       	rjmp	.+46     	; 0xb08 <AirController_fun+0x9a>
+				keypad_input_temp=KEYPAD_getPressedKey();
+     ada:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+     ade:	9f e9       	ldi	r25, 0x9F	; 159
+     ae0:	26 e8       	ldi	r18, 0x86	; 134
+     ae2:	31 e0       	ldi	r19, 0x01	; 1
+     ae4:	91 50       	subi	r25, 0x01	; 1
+     ae6:	20 40       	sbci	r18, 0x00	; 0
+     ae8:	30 40       	sbci	r19, 0x00	; 0
+     aea:	e1 f7       	brne	.-8      	; 0xae4 <AirController_fun+0x76>
+     aec:	00 c0       	rjmp	.+0      	; 0xaee <AirController_fun+0x80>
+     aee:	00 00       	nop
+				_delay_ms(500);
+				temp=temp*10 + keypad_input_temp;
+     af0:	9d 2f       	mov	r25, r29
+     af2:	99 0f       	add	r25, r25
+     af4:	d9 2f       	mov	r29, r25
+     af6:	dd 0f       	add	r29, r29
+     af8:	dd 0f       	add	r29, r29
+     afa:	9d 0f       	add	r25, r29
+     afc:	d8 2f       	mov	r29, r24
+     afe:	d9 0f       	add	r29, r25
+				LCD_displayCharacter(keypad_input_temp + ASCII_ZERO);
+     b00:	80 5d       	subi	r24, 0xD0	; 208
+     b02:	0e 94 09 08 	call	0x1012	; 0x1012 <LCD_displayCharacter>
+			LCD_clearScreen();
+			LCD_displayString("set temp:-  C");
+			/*move cursor of LCD to row 1 and column 11*/
+			LCD_moveCursor(0,10);
+			/*to enter the temperature consist of two digit*/
+			for(i=0;i<2;i++){
+     b06:	1f 5f       	subi	r17, 0xFF	; 255
+     b08:	12 30       	cpi	r17, 0x02	; 2
+     b0a:	38 f3       	brcs	.-50     	; 0xada <AirController_fun+0x6c>
+     b0c:	8f e3       	ldi	r24, 0x3F	; 63
+     b0e:	9d e0       	ldi	r25, 0x0D	; 13
+     b10:	23 e0       	ldi	r18, 0x03	; 3
+     b12:	81 50       	subi	r24, 0x01	; 1
+     b14:	90 40       	sbci	r25, 0x00	; 0
+     b16:	20 40       	sbci	r18, 0x00	; 0
+     b18:	e1 f7       	brne	.-8      	; 0xb12 <AirController_fun+0xa4>
+     b1a:	00 c0       	rjmp	.+0      	; 0xb1c <AirController_fun+0xae>
+     b1c:	00 00       	nop
+				temp=temp*10 + keypad_input_temp;
+				LCD_displayCharacter(keypad_input_temp + ASCII_ZERO);
+			}
+			_delay_ms(1000);
+			/*send the required temp to other micro controller*/
+			SPI_sendReciveByte(temp);
+     b1e:	8d 2f       	mov	r24, r29
+     b20:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+     b24:	27 c0       	rjmp	.+78     	; 0xb74 <AirController_fun+0x106>
+		}
+		else if(Air_option==2){
+     b26:	c2 30       	cpi	r28, 0x02	; 2
+     b28:	29 f5       	brne	.+74     	; 0xb74 <AirController_fun+0x106>
+			/*receive the state of an object from the other MC*/
+			obj_state=SPI_sendReciveByte(SPI_DEFAULT_DATA_VALUE);
+     b2a:	8f ef       	ldi	r24, 0xFF	; 255
+     b2c:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+     b30:	18 2f       	mov	r17, r24
+			/*display the informations of the required room*/
+			LCD_clearScreen();
+     b32:	0e 94 62 08 	call	0x10c4	; 0x10c4 <LCD_clearScreen>
+			if(obj_state==LOGIC_HIGH){
+     b36:	11 30       	cpi	r17, 0x01	; 1
+     b38:	29 f4       	brne	.+10     	; 0xb44 <AirController_fun+0xd6>
+				LCD_displayString("Air_Cond.  s:ON");
+     b3a:	8e ea       	ldi	r24, 0xAE	; 174
+     b3c:	92 e0       	ldi	r25, 0x02	; 2
+     b3e:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+     b42:	04 c0       	rjmp	.+8      	; 0xb4c <AirController_fun+0xde>
+			}
+			else{
+				LCD_displayString("Air_Cond. s:OFF");
+     b44:	8e eb       	ldi	r24, 0xBE	; 190
+     b46:	92 e0       	ldi	r25, 0x02	; 2
+     b48:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+			}
+			/*move cursor of LCD to row 1 */
+			LCD_moveCursor(1,0);
+     b4c:	60 e0       	ldi	r22, 0x00	; 0
+     b4e:	81 e0       	ldi	r24, 0x01	; 1
+     b50:	0e 94 4b 08 	call	0x1096	; 0x1096 <LCD_moveCursor>
+			LCD_displayString("1:on 2-off 0:RET");
+     b54:	8e ec       	ldi	r24, 0xCE	; 206
+     b56:	92 e0       	ldi	r25, 0x02	; 2
+     b58:	0e 94 38 08 	call	0x1070	; 0x1070 <LCD_displayString>
+			req_state=KEYPAD_getPressedKey();
+     b5c:	0e 94 5c 07 	call	0xeb8	; 0xeb8 <KEYPAD_getPressedKey>
+     b60:	08 2f       	mov	r16, r24
+     b62:	87 ea       	ldi	r24, 0xA7	; 167
+     b64:	91 e6       	ldi	r25, 0x61	; 97
+     b66:	01 97       	sbiw	r24, 0x01	; 1
+     b68:	f1 f7       	brne	.-4      	; 0xb66 <AirController_fun+0xf8>
+     b6a:	00 c0       	rjmp	.+0      	; 0xb6c <AirController_fun+0xfe>
+     b6c:	00 00       	nop
+			_delay_ms(100);
+			SPI_sendReciveByte(req_state);
+     b6e:	80 2f       	mov	r24, r16
+     b70:	0e 94 97 08 	call	0x112e	; 0x112e <SPI_sendReciveByte>
+
+		}
+	}while (((Air_option !=0)  && (Air_option != 2))||(req_state==0));
+     b74:	cc 23       	and	r28, r28
+     b76:	19 f0       	breq	.+6      	; 0xb7e <AirController_fun+0x110>
+     b78:	c2 30       	cpi	r28, 0x02	; 2
+     b7a:	09 f0       	breq	.+2      	; 0xb7e <AirController_fun+0x110>
+     b7c:	7e cf       	rjmp	.-260    	; 0xa7a <AirController_fun+0xc>
+     b7e:	00 23       	and	r16, r16
+     b80:	09 f4       	brne	.+2      	; 0xb84 <AirController_fun+0x116>
+     b82:	7b cf       	rjmp	.-266    	; 0xa7a <AirController_fun+0xc>
+	return Air_option;
+}
+     b84:	8c 2f       	mov	r24, r28
+     b86:	df 91       	pop	r29
+     b88:	cf 91       	pop	r28
+     b8a:	1f 91       	pop	r17
+     b8c:	0f 91       	pop	r16
+     b8e:	08 95       	ret
+
+00000b90 <GPIO_setupPinDirection>:
+	/*
+	 * Check if the input port number is greater than NUM_OF_PINS_PER_PORT value.
+	 * Or if the input pin number is greater than NUM_OF_PINS_PER_PORT value.
+	 * In this case the input is not valid port/pin number
+	 */
+	if((pin_num >= NUM_OF_PINS_PER_PORT) || (port_num >= NUM_OF_PORTS))
+     b90:	68 30       	cpi	r22, 0x08	; 8
+     b92:	08 f0       	brcs	.+2      	; 0xb96 <GPIO_setupPinDirection+0x6>
+     b94:	6f c0       	rjmp	.+222    	; 0xc74 <GPIO_setupPinDirection+0xe4>
+     b96:	84 30       	cpi	r24, 0x04	; 4
+     b98:	08 f0       	brcs	.+2      	; 0xb9c <GPIO_setupPinDirection+0xc>
+     b9a:	6c c0       	rjmp	.+216    	; 0xc74 <GPIO_setupPinDirection+0xe4>
+		/* Do Nothing */
+	}
+	else
+	{
+		/* Setup the pin direction as required */
+		switch(port_num)
+     b9c:	81 30       	cpi	r24, 0x01	; 1
+     b9e:	01 f1       	breq	.+64     	; 0xbe0 <GPIO_setupPinDirection+0x50>
+     ba0:	30 f0       	brcs	.+12     	; 0xbae <GPIO_setupPinDirection+0x1e>
+     ba2:	82 30       	cpi	r24, 0x02	; 2
+     ba4:	b1 f1       	breq	.+108    	; 0xc12 <GPIO_setupPinDirection+0x82>
+     ba6:	83 30       	cpi	r24, 0x03	; 3
+     ba8:	09 f4       	brne	.+2      	; 0xbac <GPIO_setupPinDirection+0x1c>
+     baa:	4c c0       	rjmp	.+152    	; 0xc44 <GPIO_setupPinDirection+0xb4>
+     bac:	08 95       	ret
+		{
+		case PORTA_ID:
+			if(direction == PIN_OUTPUT)
+     bae:	41 30       	cpi	r20, 0x01	; 1
+     bb0:	59 f4       	brne	.+22     	; 0xbc8 <GPIO_setupPinDirection+0x38>
+			{
+				SET_BIT(DDRA,pin_num);
+     bb2:	2a b3       	in	r18, 0x1a	; 26
+     bb4:	81 e0       	ldi	r24, 0x01	; 1
+     bb6:	90 e0       	ldi	r25, 0x00	; 0
+     bb8:	02 c0       	rjmp	.+4      	; 0xbbe <GPIO_setupPinDirection+0x2e>
+     bba:	88 0f       	add	r24, r24
+     bbc:	99 1f       	adc	r25, r25
+     bbe:	6a 95       	dec	r22
+     bc0:	e2 f7       	brpl	.-8      	; 0xbba <GPIO_setupPinDirection+0x2a>
+     bc2:	82 2b       	or	r24, r18
+     bc4:	8a bb       	out	0x1a, r24	; 26
+     bc6:	08 95       	ret
+			}
+			else
+			{
+				CLEAR_BIT(DDRA,pin_num);
+     bc8:	2a b3       	in	r18, 0x1a	; 26
+     bca:	81 e0       	ldi	r24, 0x01	; 1
+     bcc:	90 e0       	ldi	r25, 0x00	; 0
+     bce:	02 c0       	rjmp	.+4      	; 0xbd4 <GPIO_setupPinDirection+0x44>
+     bd0:	88 0f       	add	r24, r24
+     bd2:	99 1f       	adc	r25, r25
+     bd4:	6a 95       	dec	r22
+     bd6:	e2 f7       	brpl	.-8      	; 0xbd0 <GPIO_setupPinDirection+0x40>
+     bd8:	80 95       	com	r24
+     bda:	82 23       	and	r24, r18
+     bdc:	8a bb       	out	0x1a, r24	; 26
+     bde:	08 95       	ret
+			}
+			break;
+		case PORTB_ID:
+			if(direction == PIN_OUTPUT)
+     be0:	41 30       	cpi	r20, 0x01	; 1
+     be2:	59 f4       	brne	.+22     	; 0xbfa <GPIO_setupPinDirection+0x6a>
+			{
+				SET_BIT(DDRB,pin_num);
+     be4:	27 b3       	in	r18, 0x17	; 23
+     be6:	81 e0       	ldi	r24, 0x01	; 1
+     be8:	90 e0       	ldi	r25, 0x00	; 0
+     bea:	02 c0       	rjmp	.+4      	; 0xbf0 <GPIO_setupPinDirection+0x60>
+     bec:	88 0f       	add	r24, r24
+     bee:	99 1f       	adc	r25, r25
+     bf0:	6a 95       	dec	r22
+     bf2:	e2 f7       	brpl	.-8      	; 0xbec <GPIO_setupPinDirection+0x5c>
+     bf4:	82 2b       	or	r24, r18
+     bf6:	87 bb       	out	0x17, r24	; 23
+     bf8:	08 95       	ret
+			}
+			else
+			{
+				CLEAR_BIT(DDRB,pin_num);
+     bfa:	27 b3       	in	r18, 0x17	; 23
+     bfc:	81 e0       	ldi	r24, 0x01	; 1
+     bfe:	90 e0       	ldi	r25, 0x00	; 0
+     c00:	02 c0       	rjmp	.+4      	; 0xc06 <GPIO_setupPinDirection+0x76>
+     c02:	88 0f       	add	r24, r24
+     c04:	99 1f       	adc	r25, r25
+     c06:	6a 95       	dec	r22
+     c08:	e2 f7       	brpl	.-8      	; 0xc02 <GPIO_setupPinDirection+0x72>
+     c0a:	80 95       	com	r24
+     c0c:	82 23       	and	r24, r18
+     c0e:	87 bb       	out	0x17, r24	; 23
+     c10:	08 95       	ret
+			}
+			break;
+		case PORTC_ID:
+			if(direction == PIN_OUTPUT)
+     c12:	41 30       	cpi	r20, 0x01	; 1
+     c14:	59 f4       	brne	.+22     	; 0xc2c <GPIO_setupPinDirection+0x9c>
+			{
+				SET_BIT(DDRC,pin_num);
+     c16:	24 b3       	in	r18, 0x14	; 20
+     c18:	81 e0       	ldi	r24, 0x01	; 1
+     c1a:	90 e0       	ldi	r25, 0x00	; 0
+     c1c:	02 c0       	rjmp	.+4      	; 0xc22 <GPIO_setupPinDirection+0x92>
+     c1e:	88 0f       	add	r24, r24
+     c20:	99 1f       	adc	r25, r25
+     c22:	6a 95       	dec	r22
+     c24:	e2 f7       	brpl	.-8      	; 0xc1e <GPIO_setupPinDirection+0x8e>
+     c26:	82 2b       	or	r24, r18
+     c28:	84 bb       	out	0x14, r24	; 20
+     c2a:	08 95       	ret
+			}
+			else
+			{
+				CLEAR_BIT(DDRC,pin_num);
+     c2c:	24 b3       	in	r18, 0x14	; 20
+     c2e:	81 e0       	ldi	r24, 0x01	; 1
+     c30:	90 e0       	ldi	r25, 0x00	; 0
+     c32:	02 c0       	rjmp	.+4      	; 0xc38 <GPIO_setupPinDirection+0xa8>
+     c34:	88 0f       	add	r24, r24
+     c36:	99 1f       	adc	r25, r25
+     c38:	6a 95       	dec	r22
+     c3a:	e2 f7       	brpl	.-8      	; 0xc34 <GPIO_setupPinDirection+0xa4>
+     c3c:	80 95       	com	r24
+     c3e:	82 23       	and	r24, r18
+     c40:	84 bb       	out	0x14, r24	; 20
+     c42:	08 95       	ret
+			}
+			break;
+		case PORTD_ID:
+			if(direction == PIN_OUTPUT)
+     c44:	41 30       	cpi	r20, 0x01	; 1
+     c46:	59 f4       	brne	.+22     	; 0xc5e <GPIO_setupPinDirection+0xce>
+			{
+				SET_BIT(DDRD,pin_num);
+     c48:	21 b3       	in	r18, 0x11	; 17
+     c4a:	81 e0       	ldi	r24, 0x01	; 1
+     c4c:	90 e0       	ldi	r25, 0x00	; 0
+     c4e:	02 c0       	rjmp	.+4      	; 0xc54 <GPIO_setupPinDirection+0xc4>
+     c50:	88 0f       	add	r24, r24
+     c52:	99 1f       	adc	r25, r25
+     c54:	6a 95       	dec	r22
+     c56:	e2 f7       	brpl	.-8      	; 0xc50 <GPIO_setupPinDirection+0xc0>
+     c58:	82 2b       	or	r24, r18
+     c5a:	81 bb       	out	0x11, r24	; 17
+     c5c:	08 95       	ret
+			}
+			else
+			{
+				CLEAR_BIT(DDRD,pin_num);
+     c5e:	21 b3       	in	r18, 0x11	; 17
+     c60:	81 e0       	ldi	r24, 0x01	; 1
+     c62:	90 e0       	ldi	r25, 0x00	; 0
+     c64:	02 c0       	rjmp	.+4      	; 0xc6a <GPIO_setupPinDirection+0xda>
+     c66:	88 0f       	add	r24, r24
+     c68:	99 1f       	adc	r25, r25
+     c6a:	6a 95       	dec	r22
+     c6c:	e2 f7       	brpl	.-8      	; 0xc66 <GPIO_setupPinDirection+0xd6>
+     c6e:	80 95       	com	r24
+     c70:	82 23       	and	r24, r18
+     c72:	81 bb       	out	0x11, r24	; 17
+     c74:	08 95       	ret
+
+00000c76 <GPIO_writePin>:
+	/*
+	 * Check if the input port number is greater than NUM_OF_PINS_PER_PORT value.
+	 * Or if the input pin number is greater than NUM_OF_PINS_PER_PORT value.
+	 * In this case the input is not valid port/pin number
+	 */
+	if((pin_num >= NUM_OF_PINS_PER_PORT) || (port_num >= NUM_OF_PORTS))
+     c76:	68 30       	cpi	r22, 0x08	; 8
+     c78:	08 f0       	brcs	.+2      	; 0xc7c <GPIO_writePin+0x6>
+     c7a:	6f c0       	rjmp	.+222    	; 0xd5a <GPIO_writePin+0xe4>
+     c7c:	84 30       	cpi	r24, 0x04	; 4
+     c7e:	08 f0       	brcs	.+2      	; 0xc82 <GPIO_writePin+0xc>
+     c80:	6c c0       	rjmp	.+216    	; 0xd5a <GPIO_writePin+0xe4>
+		/* Do Nothing */
+	}
+	else
+	{
+		/* Write the pin value as required */
+		switch(port_num)
+     c82:	81 30       	cpi	r24, 0x01	; 1
+     c84:	01 f1       	breq	.+64     	; 0xcc6 <GPIO_writePin+0x50>
+     c86:	30 f0       	brcs	.+12     	; 0xc94 <GPIO_writePin+0x1e>
+     c88:	82 30       	cpi	r24, 0x02	; 2
+     c8a:	b1 f1       	breq	.+108    	; 0xcf8 <GPIO_writePin+0x82>
+     c8c:	83 30       	cpi	r24, 0x03	; 3
+     c8e:	09 f4       	brne	.+2      	; 0xc92 <GPIO_writePin+0x1c>
+     c90:	4c c0       	rjmp	.+152    	; 0xd2a <GPIO_writePin+0xb4>
+     c92:	08 95       	ret
+		{
+		case PORTA_ID:
+			if(value == LOGIC_HIGH)
+     c94:	41 30       	cpi	r20, 0x01	; 1
+     c96:	59 f4       	brne	.+22     	; 0xcae <GPIO_writePin+0x38>
+			{
+				SET_BIT(PORTA,pin_num);
+     c98:	2b b3       	in	r18, 0x1b	; 27
+     c9a:	81 e0       	ldi	r24, 0x01	; 1
+     c9c:	90 e0       	ldi	r25, 0x00	; 0
+     c9e:	02 c0       	rjmp	.+4      	; 0xca4 <GPIO_writePin+0x2e>
+     ca0:	88 0f       	add	r24, r24
+     ca2:	99 1f       	adc	r25, r25
+     ca4:	6a 95       	dec	r22
+     ca6:	e2 f7       	brpl	.-8      	; 0xca0 <GPIO_writePin+0x2a>
+     ca8:	82 2b       	or	r24, r18
+     caa:	8b bb       	out	0x1b, r24	; 27
+     cac:	08 95       	ret
+			}
+			else
+			{
+				CLEAR_BIT(PORTA,pin_num);
+     cae:	2b b3       	in	r18, 0x1b	; 27
+     cb0:	81 e0       	ldi	r24, 0x01	; 1
+     cb2:	90 e0       	ldi	r25, 0x00	; 0
+     cb4:	02 c0       	rjmp	.+4      	; 0xcba <GPIO_writePin+0x44>
+     cb6:	88 0f       	add	r24, r24
+     cb8:	99 1f       	adc	r25, r25
+     cba:	6a 95       	dec	r22
+     cbc:	e2 f7       	brpl	.-8      	; 0xcb6 <GPIO_writePin+0x40>
+     cbe:	80 95       	com	r24
+     cc0:	82 23       	and	r24, r18
+     cc2:	8b bb       	out	0x1b, r24	; 27
+     cc4:	08 95       	ret
+			}
+			break;
+		case PORTB_ID:
+			if(value == LOGIC_HIGH)
+     cc6:	41 30       	cpi	r20, 0x01	; 1
+     cc8:	59 f4       	brne	.+22     	; 0xce0 <GPIO_writePin+0x6a>
+			{
+				SET_BIT(PORTB,pin_num);
+     cca:	28 b3       	in	r18, 0x18	; 24
+     ccc:	81 e0       	ldi	r24, 0x01	; 1
+     cce:	90 e0       	ldi	r25, 0x00	; 0
+     cd0:	02 c0       	rjmp	.+4      	; 0xcd6 <GPIO_writePin+0x60>
+     cd2:	88 0f       	add	r24, r24
+     cd4:	99 1f       	adc	r25, r25
+     cd6:	6a 95       	dec	r22
+     cd8:	e2 f7       	brpl	.-8      	; 0xcd2 <GPIO_writePin+0x5c>
+     cda:	82 2b       	or	r24, r18
+     cdc:	88 bb       	out	0x18, r24	; 24
+     cde:	08 95       	ret
+			}
+			else
+			{
+				CLEAR_BIT(PORTB,pin_num);
+     ce0:	28 b3       	in	r18, 0x18	; 24
+     ce2:	81 e0       	ldi	r24, 0x01	; 1
+     ce4:	90 e0       	ldi	r25, 0x00	; 0
+     ce6:	02 c0       	rjmp	.+4      	; 0xcec <GPIO_writePin+0x76>
+     ce8:	88 0f       	add	r24, r24
+     cea:	99 1f       	adc	r25, r25
+     cec:	6a 95       	dec	r22
+     cee:	e2 f7       	brpl	.-8      	; 0xce8 <GPIO_writePin+0x72>
+     cf0:	80 95       	com	r24
+     cf2:	82 23       	and	r24, r18
+     cf4:	88 bb       	out	0x18, r24	; 24
+     cf6:	08 95       	ret
+			}
+			break;
+		case PORTC_ID:
+			if(value == LOGIC_HIGH)
+     cf8:	41 30       	cpi	r20, 0x01	; 1
+     cfa:	59 f4       	brne	.+22     	; 0xd12 <GPIO_writePin+0x9c>
+			{
+				SET_BIT(PORTC,pin_num);
+     cfc:	25 b3       	in	r18, 0x15	; 21
+     cfe:	81 e0       	ldi	r24, 0x01	; 1
+     d00:	90 e0       	ldi	r25, 0x00	; 0
+     d02:	02 c0       	rjmp	.+4      	; 0xd08 <GPIO_writePin+0x92>
+     d04:	88 0f       	add	r24, r24
+     d06:	99 1f       	adc	r25, r25
+     d08:	6a 95       	dec	r22
+     d0a:	e2 f7       	brpl	.-8      	; 0xd04 <GPIO_writePin+0x8e>
+     d0c:	82 2b       	or	r24, r18
+     d0e:	85 bb       	out	0x15, r24	; 21
+     d10:	08 95       	ret
+			}
+			else
+			{
+				CLEAR_BIT(PORTC,pin_num);
+     d12:	25 b3       	in	r18, 0x15	; 21
+     d14:	81 e0       	ldi	r24, 0x01	; 1
+     d16:	90 e0       	ldi	r25, 0x00	; 0
+     d18:	02 c0       	rjmp	.+4      	; 0xd1e <GPIO_writePin+0xa8>
+     d1a:	88 0f       	add	r24, r24
+     d1c:	99 1f       	adc	r25, r25
+     d1e:	6a 95       	dec	r22
+     d20:	e2 f7       	brpl	.-8      	; 0xd1a <GPIO_writePin+0xa4>
+     d22:	80 95       	com	r24
+     d24:	82 23       	and	r24, r18
+     d26:	85 bb       	out	0x15, r24	; 21
+     d28:	08 95       	ret
+			}
+			break;
+		case PORTD_ID:
+			if(value == LOGIC_HIGH)
+     d2a:	41 30       	cpi	r20, 0x01	; 1
+     d2c:	59 f4       	brne	.+22     	; 0xd44 <GPIO_writePin+0xce>
+			{
+				SET_BIT(PORTD,pin_num);
+     d2e:	22 b3       	in	r18, 0x12	; 18
+     d30:	81 e0       	ldi	r24, 0x01	; 1
+     d32:	90 e0       	ldi	r25, 0x00	; 0
+     d34:	02 c0       	rjmp	.+4      	; 0xd3a <GPIO_writePin+0xc4>
+     d36:	88 0f       	add	r24, r24
+     d38:	99 1f       	adc	r25, r25
+     d3a:	6a 95       	dec	r22
+     d3c:	e2 f7       	brpl	.-8      	; 0xd36 <GPIO_writePin+0xc0>
+     d3e:	82 2b       	or	r24, r18
+     d40:	82 bb       	out	0x12, r24	; 18
+     d42:	08 95       	ret
+			}
+			else
+			{
+				CLEAR_BIT(PORTD,pin_num);
+     d44:	22 b3       	in	r18, 0x12	; 18
+     d46:	81 e0       	ldi	r24, 0x01	; 1
+     d48:	90 e0       	ldi	r25, 0x00	; 0
+     d4a:	02 c0       	rjmp	.+4      	; 0xd50 <GPIO_writePin+0xda>
+     d4c:	88 0f       	add	r24, r24
+     d4e:	99 1f       	adc	r25, r25
+     d50:	6a 95       	dec	r22
+     d52:	e2 f7       	brpl	.-8      	; 0xd4c <GPIO_writePin+0xd6>
+     d54:	80 95       	com	r24
+     d56:	82 23       	and	r24, r18
+     d58:	82 bb       	out	0x12, r24	; 18
+     d5a:	08 95       	ret
+
+00000d5c <GPIO_readPin>:
+	/*
+	 * Check if the input port number is greater than NUM_OF_PINS_PER_PORT value.
+	 * Or if the input pin number is greater than NUM_OF_PINS_PER_PORT value.
+	 * In this case the input is not valid port/pin number
+	 */
+	if((pin_num >= NUM_OF_PINS_PER_PORT) || (port_num >= NUM_OF_PORTS))
+     d5c:	68 30       	cpi	r22, 0x08	; 8
+     d5e:	b0 f5       	brcc	.+108    	; 0xdcc <GPIO_readPin+0x70>
+     d60:	84 30       	cpi	r24, 0x04	; 4
+     d62:	b0 f5       	brcc	.+108    	; 0xdd0 <GPIO_readPin+0x74>
+		/* Do Nothing */
+	}
+	else
+	{
+		/* Read the pin value as required */
+		switch(port_num)
+     d64:	81 30       	cpi	r24, 0x01	; 1
+     d66:	89 f0       	breq	.+34     	; 0xd8a <GPIO_readPin+0x2e>
+     d68:	28 f0       	brcs	.+10     	; 0xd74 <GPIO_readPin+0x18>
+     d6a:	82 30       	cpi	r24, 0x02	; 2
+     d6c:	c9 f0       	breq	.+50     	; 0xda0 <GPIO_readPin+0x44>
+     d6e:	83 30       	cpi	r24, 0x03	; 3
+     d70:	11 f1       	breq	.+68     	; 0xdb6 <GPIO_readPin+0x5a>
+     d72:	30 c0       	rjmp	.+96     	; 0xdd4 <GPIO_readPin+0x78>
+		{
+		case PORTA_ID:
+			if(BIT_IS_SET(PINA,pin_num))
+     d74:	89 b3       	in	r24, 0x19	; 25
+     d76:	90 e0       	ldi	r25, 0x00	; 0
+     d78:	02 c0       	rjmp	.+4      	; 0xd7e <GPIO_readPin+0x22>
+     d7a:	95 95       	asr	r25
+     d7c:	87 95       	ror	r24
+     d7e:	6a 95       	dec	r22
+     d80:	e2 f7       	brpl	.-8      	; 0xd7a <GPIO_readPin+0x1e>
+     d82:	80 ff       	sbrs	r24, 0
+     d84:	29 c0       	rjmp	.+82     	; 0xdd8 <GPIO_readPin+0x7c>
+			{
+				pin_value = LOGIC_HIGH;
+     d86:	81 e0       	ldi	r24, 0x01	; 1
+     d88:	08 95       	ret
+			{
+				pin_value = LOGIC_LOW;
+			}
+			break;
+		case PORTB_ID:
+			if(BIT_IS_SET(PINB,pin_num))
+     d8a:	86 b3       	in	r24, 0x16	; 22
+     d8c:	90 e0       	ldi	r25, 0x00	; 0
+     d8e:	02 c0       	rjmp	.+4      	; 0xd94 <GPIO_readPin+0x38>
+     d90:	95 95       	asr	r25
+     d92:	87 95       	ror	r24
+     d94:	6a 95       	dec	r22
+     d96:	e2 f7       	brpl	.-8      	; 0xd90 <GPIO_readPin+0x34>
+     d98:	80 ff       	sbrs	r24, 0
+     d9a:	20 c0       	rjmp	.+64     	; 0xddc <GPIO_readPin+0x80>
+			{
+				pin_value = LOGIC_HIGH;
+     d9c:	81 e0       	ldi	r24, 0x01	; 1
+     d9e:	08 95       	ret
+			{
+				pin_value = LOGIC_LOW;
+			}
+			break;
+		case PORTC_ID:
+			if(BIT_IS_SET(PINC,pin_num))
+     da0:	83 b3       	in	r24, 0x13	; 19
+     da2:	90 e0       	ldi	r25, 0x00	; 0
+     da4:	02 c0       	rjmp	.+4      	; 0xdaa <GPIO_readPin+0x4e>
+     da6:	95 95       	asr	r25
+     da8:	87 95       	ror	r24
+     daa:	6a 95       	dec	r22
+     dac:	e2 f7       	brpl	.-8      	; 0xda6 <GPIO_readPin+0x4a>
+     dae:	80 ff       	sbrs	r24, 0
+     db0:	17 c0       	rjmp	.+46     	; 0xde0 <GPIO_readPin+0x84>
+			{
+				pin_value = LOGIC_HIGH;
+     db2:	81 e0       	ldi	r24, 0x01	; 1
+     db4:	08 95       	ret
+			{
+				pin_value = LOGIC_LOW;
+			}
+			break;
+		case PORTD_ID:
+			if(BIT_IS_SET(PIND,pin_num))
+     db6:	80 b3       	in	r24, 0x10	; 16
+     db8:	90 e0       	ldi	r25, 0x00	; 0
+     dba:	02 c0       	rjmp	.+4      	; 0xdc0 <GPIO_readPin+0x64>
+     dbc:	95 95       	asr	r25
+     dbe:	87 95       	ror	r24
+     dc0:	6a 95       	dec	r22
+     dc2:	e2 f7       	brpl	.-8      	; 0xdbc <GPIO_readPin+0x60>
+     dc4:	80 ff       	sbrs	r24, 0
+     dc6:	0e c0       	rjmp	.+28     	; 0xde4 <GPIO_readPin+0x88>
+			{
+				pin_value = LOGIC_HIGH;
+     dc8:	81 e0       	ldi	r24, 0x01	; 1
+     dca:	08 95       	ret
+ * Read and return the value for the required pin, it should be Logic High or Logic Low.
+ * If the input port number or pin number are not correct, The function will return Logic Low.
+ */
+uint8 GPIO_readPin(uint8 port_num, uint8 pin_num)
+{
+	uint8 pin_value = LOGIC_LOW;
+     dcc:	80 e0       	ldi	r24, 0x00	; 0
+     dce:	08 95       	ret
+     dd0:	80 e0       	ldi	r24, 0x00	; 0
+     dd2:	08 95       	ret
+     dd4:	80 e0       	ldi	r24, 0x00	; 0
+     dd6:	08 95       	ret
+			{
+				pin_value = LOGIC_HIGH;
+			}
+			else
+			{
+				pin_value = LOGIC_LOW;
+     dd8:	80 e0       	ldi	r24, 0x00	; 0
+     dda:	08 95       	ret
+			{
+				pin_value = LOGIC_HIGH;
+			}
+			else
+			{
+				pin_value = LOGIC_LOW;
+     ddc:	80 e0       	ldi	r24, 0x00	; 0
+     dde:	08 95       	ret
+			{
+				pin_value = LOGIC_HIGH;
+			}
+			else
+			{
+				pin_value = LOGIC_LOW;
+     de0:	80 e0       	ldi	r24, 0x00	; 0
+     de2:	08 95       	ret
+			{
+				pin_value = LOGIC_HIGH;
+			}
+			else
+			{
+				pin_value = LOGIC_LOW;
+     de4:	80 e0       	ldi	r24, 0x00	; 0
+			break;
+		}
+	}
+
+	return pin_value;
+}
+     de6:	08 95       	ret
+
+00000de8 <GPIO_setupPortDirection>:
+{
+	/*
+	 * Check if the input number is greater than NUM_OF_PORTS value.
+	 * In this case the input is not valid port number
+	 */
+	if(port_num >= NUM_OF_PORTS)
+     de8:	84 30       	cpi	r24, 0x04	; 4
+     dea:	78 f4       	brcc	.+30     	; 0xe0a <GPIO_setupPortDirection+0x22>
+		/* Do Nothing */
+	}
+	else
+	{
+		/* Setup the port direction as required */
+		switch(port_num)
+     dec:	81 30       	cpi	r24, 0x01	; 1
+     dee:	41 f0       	breq	.+16     	; 0xe00 <GPIO_setupPortDirection+0x18>
+     df0:	28 f0       	brcs	.+10     	; 0xdfc <GPIO_setupPortDirection+0x14>
+     df2:	82 30       	cpi	r24, 0x02	; 2
+     df4:	39 f0       	breq	.+14     	; 0xe04 <GPIO_setupPortDirection+0x1c>
+     df6:	83 30       	cpi	r24, 0x03	; 3
+     df8:	39 f0       	breq	.+14     	; 0xe08 <GPIO_setupPortDirection+0x20>
+     dfa:	08 95       	ret
+		{
+		case PORTA_ID:
+			DDRA = direction;
+     dfc:	6a bb       	out	0x1a, r22	; 26
+			break;
+     dfe:	08 95       	ret
+		case PORTB_ID:
+			DDRB = direction;
+     e00:	67 bb       	out	0x17, r22	; 23
+			break;
+     e02:	08 95       	ret
+		case PORTC_ID:
+			DDRC = direction;
+     e04:	64 bb       	out	0x14, r22	; 20
+			break;
+     e06:	08 95       	ret
+		case PORTD_ID:
+			DDRD = direction;
+     e08:	61 bb       	out	0x11, r22	; 17
+     e0a:	08 95       	ret
+
+00000e0c <GPIO_writePort>:
+{
+	/*
+	 * Check if the input number is greater than NUM_OF_PORTS value.
+	 * In this case the input is not valid port number
+	 */
+	if(port_num >= NUM_OF_PORTS)
+     e0c:	84 30       	cpi	r24, 0x04	; 4
+     e0e:	78 f4       	brcc	.+30     	; 0xe2e <GPIO_writePort+0x22>
+		/* Do Nothing */
+	}
+	else
+	{
+		/* Write the port value as required */
+		switch(port_num)
+     e10:	81 30       	cpi	r24, 0x01	; 1
+     e12:	41 f0       	breq	.+16     	; 0xe24 <GPIO_writePort+0x18>
+     e14:	28 f0       	brcs	.+10     	; 0xe20 <GPIO_writePort+0x14>
+     e16:	82 30       	cpi	r24, 0x02	; 2
+     e18:	39 f0       	breq	.+14     	; 0xe28 <GPIO_writePort+0x1c>
+     e1a:	83 30       	cpi	r24, 0x03	; 3
+     e1c:	39 f0       	breq	.+14     	; 0xe2c <GPIO_writePort+0x20>
+     e1e:	08 95       	ret
+		{
+		case PORTA_ID:
+			PORTA = value;
+     e20:	6b bb       	out	0x1b, r22	; 27
+			break;
+     e22:	08 95       	ret
+		case PORTB_ID:
+			PORTB = value;
+     e24:	68 bb       	out	0x18, r22	; 24
+			break;
+     e26:	08 95       	ret
+		case PORTC_ID:
+			PORTC = value;
+     e28:	65 bb       	out	0x15, r22	; 21
+			break;
+     e2a:	08 95       	ret
+		case PORTD_ID:
+			PORTD = value;
+     e2c:	62 bb       	out	0x12, r22	; 18
+     e2e:	08 95       	ret
+
+00000e30 <Internal_writeByte>:
+ */
+
+void Internal_writeByte(const uint16 uiAddress,const uint8 uiData){
+
+	/* Wait for completion of previous write process*/
+	while ( ( (EECR & (1 << EEWE) ) >>EEWE ) == 1)
+     e30:	e1 99       	sbic	0x1c, 1	; 28
+     e32:	fe cf       	rjmp	.-4      	; 0xe30 <Internal_writeByte>
+	;
+	/* Move the required address to address register */
+	EEAR = uiAddress;
+     e34:	9f bb       	out	0x1f, r25	; 31
+     e36:	8e bb       	out	0x1e, r24	; 30
+
+	/* Read the byte in the address of EEAR */
+	EECR |= (1 << EERE);
+     e38:	8c b3       	in	r24, 0x1c	; 28
+     e3a:	81 60       	ori	r24, 0x01	; 1
+     e3c:	8c bb       	out	0x1c, r24	; 28
+	/*this mean the data already exist*/ 
+	if (EEDR != uiData)
+     e3e:	8d b3       	in	r24, 0x1d	; 29
+     e40:	86 17       	cp	r24, r22
+     e42:	39 f0       	breq	.+14     	; 0xe52 <Internal_writeByte+0x22>
+	{
+		
+		EEDR = uiData;/*move tha data to data registers*/
+     e44:	6d bb       	out	0x1d, r22	; 29
+
+		/* Write logical one to EEMWE */
+		EECR |= (1 << EEMWE);
+     e46:	8c b3       	in	r24, 0x1c	; 28
+     e48:	84 60       	ori	r24, 0x04	; 4
+     e4a:	8c bb       	out	0x1c, r24	; 28
+		/* Start EEPROM write by setting EEWE */
+		EECR |= (1 << EEWE);
+     e4c:	8c b3       	in	r24, 0x1c	; 28
+     e4e:	82 60       	ori	r24, 0x02	; 2
+     e50:	8c bb       	out	0x1c, r24	; 28
+     e52:	08 95       	ret
+
+00000e54 <Internal_readByte>:
+ * -->take the address and variable that hold the needed data
+ * Return the required data from data registers
+ */
+
+uint8 Internal_readByte(uint16 add){
+	while(EECR&(1<<EEWE));
+     e54:	e1 99       	sbic	0x1c, 1	; 28
+     e56:	fe cf       	rjmp	.-4      	; 0xe54 <Internal_readByte>
+	/*detect  the required address*/
+	EEAR=add;
+     e58:	9f bb       	out	0x1f, r25	; 31
+     e5a:	8e bb       	out	0x1e, r24	; 30
+	EECR|=(1<<EERE);
+     e5c:	8c b3       	in	r24, 0x1c	; 28
+     e5e:	81 60       	ori	r24, 0x01	; 1
+     e60:	8c bb       	out	0x1c, r24	; 28
+	/*get the data from data Register*/
+	return EEDR;
+     e62:	8d b3       	in	r24, 0x1d	; 29
+}
+     e64:	08 95       	ret
+
+00000e66 <KEYPAD_4X4_adjustKeyNumber>:
+}
+#elif(COLUMNS_NUMBER==4)
+/*to hand specials cases like(+,%) with 4x4 keypad*/
+static uint8 KEYPAD_4X4_adjustKeyNumber(uint8 num){
+
+	switch(num){
+     e66:	48 2f       	mov	r20, r24
+     e68:	50 e0       	ldi	r21, 0x00	; 0
+     e6a:	fa 01       	movw	r30, r20
+     e6c:	31 97       	sbiw	r30, 0x01	; 1
+     e6e:	e0 31       	cpi	r30, 0x10	; 16
+     e70:	f1 05       	cpc	r31, r1
+     e72:	08 f5       	brcc	.+66     	; 0xeb6 <KEYPAD_4X4_adjustKeyNumber+0x50>
+     e74:	e6 5d       	subi	r30, 0xD6	; 214
+     e76:	ff 4f       	sbci	r31, 0xFF	; 255
+     e78:	0c 94 18 09 	jmp	0x1230	; 0x1230 <__tablejump2__>
+	case 1:
+		num = 7;
+		break;
+	case 2:
+		num = 8;
+     e7c:	88 e0       	ldi	r24, 0x08	; 8
+		break;
+     e7e:	08 95       	ret
+	case 3:
+		num = 9;
+     e80:	89 e0       	ldi	r24, 0x09	; 9
+		break;
+     e82:	08 95       	ret
+	case 4:
+		num = '/';
+     e84:	8f e2       	ldi	r24, 0x2F	; 47
+		break;
+     e86:	08 95       	ret
+	case 5:
+		num = 4;
+     e88:	84 e0       	ldi	r24, 0x04	; 4
+		break;
+     e8a:	08 95       	ret
+	case 6:
+		num = 5;
+     e8c:	85 e0       	ldi	r24, 0x05	; 5
+		break;
+     e8e:	08 95       	ret
+	case 7:
+		num = 6;
+     e90:	86 e0       	ldi	r24, 0x06	; 6
+		break;
+     e92:	08 95       	ret
+	case 8:
+		num = '*';
+     e94:	8a e2       	ldi	r24, 0x2A	; 42
+		break;
+     e96:	08 95       	ret
+	case 9:
+		num = 1;
+     e98:	81 e0       	ldi	r24, 0x01	; 1
+		break;
+     e9a:	08 95       	ret
+	case 10:
+		num = 2;
+     e9c:	82 e0       	ldi	r24, 0x02	; 2
+		break;
+     e9e:	08 95       	ret
+	case 11:
+		num = 3;
+     ea0:	83 e0       	ldi	r24, 0x03	; 3
+		break;
+     ea2:	08 95       	ret
+	case 12:
+		num = '-';
+     ea4:	8d e2       	ldi	r24, 0x2D	; 45
+		break;
+     ea6:	08 95       	ret
+	case 13:
+		num = 13;     /*ascii of enter*/
+		break;
+	case 14:
+		num = 0;
+     ea8:	80 e0       	ldi	r24, 0x00	; 0
+		break;
+     eaa:	08 95       	ret
+	case 15:
+		num = '=';
+     eac:	8d e3       	ldi	r24, 0x3D	; 61
+		break;
+     eae:	08 95       	ret
+	case 16:
+		num = '+';
+     eb0:	8b e2       	ldi	r24, 0x2B	; 43
+		break;
+     eb2:	08 95       	ret
+/*to hand specials cases like(+,%) with 4x4 keypad*/
+static uint8 KEYPAD_4X4_adjustKeyNumber(uint8 num){
+
+	switch(num){
+	case 1:
+		num = 7;
+     eb4:	87 e0       	ldi	r24, 0x07	; 7
+		num = '+';
+		break;
+	}
+	return num;
+
+}
+     eb6:	08 95       	ret
+
+00000eb8 <KEYPAD_getPressedKey>:
+/*
+ * Function Name:KEYPAD_getButtonPressed
+ * Description:
+ * get the number of the button that pressed
+ */
+uint8 KEYPAD_getPressedKey(void){
+     eb8:	cf 93       	push	r28
+     eba:	df 93       	push	r29
+	uint8 row_num,col_num;    /*indicate the number of row and number of column*/
+	/*setup the rows_pins as input pin*/
+	GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID,KEYPAD_ROWS_FIRST_PIN_ID ,PIN_INPUT);
+     ebc:	40 e0       	ldi	r20, 0x00	; 0
+     ebe:	60 e0       	ldi	r22, 0x00	; 0
+     ec0:	83 e0       	ldi	r24, 0x03	; 3
+     ec2:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+	GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID,KEYPAD_ROWS_FIRST_PIN_ID+1 ,PIN_INPUT);
+     ec6:	40 e0       	ldi	r20, 0x00	; 0
+     ec8:	61 e0       	ldi	r22, 0x01	; 1
+     eca:	83 e0       	ldi	r24, 0x03	; 3
+     ecc:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+	GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID,KEYPAD_ROWS_FIRST_PIN_ID+2 ,PIN_INPUT);
+     ed0:	40 e0       	ldi	r20, 0x00	; 0
+     ed2:	62 e0       	ldi	r22, 0x02	; 2
+     ed4:	83 e0       	ldi	r24, 0x03	; 3
+     ed6:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+	GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID,KEYPAD_ROWS_FIRST_PIN_ID+3 ,PIN_INPUT);
+     eda:	40 e0       	ldi	r20, 0x00	; 0
+     edc:	63 e0       	ldi	r22, 0x03	; 3
+     ede:	83 e0       	ldi	r24, 0x03	; 3
+     ee0:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+	/*setup the columns_pins as input pin*/
+	GPIO_setupPinDirection(KEYPAD_COLUMNS_PORT_ID,KEYPAD_COLUMNS_FIRST_PIN_ID ,PIN_INPUT);
+     ee4:	40 e0       	ldi	r20, 0x00	; 0
+     ee6:	64 e0       	ldi	r22, 0x04	; 4
+     ee8:	83 e0       	ldi	r24, 0x03	; 3
+     eea:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+	GPIO_setupPinDirection(KEYPAD_COLUMNS_PORT_ID,KEYPAD_COLUMNS_FIRST_PIN_ID+1 ,PIN_INPUT);
+     eee:	40 e0       	ldi	r20, 0x00	; 0
+     ef0:	65 e0       	ldi	r22, 0x05	; 5
+     ef2:	83 e0       	ldi	r24, 0x03	; 3
+     ef4:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+	GPIO_setupPinDirection(KEYPAD_COLUMNS_PORT_ID,KEYPAD_COLUMNS_FIRST_PIN_ID+2 ,PIN_INPUT);
+     ef8:	40 e0       	ldi	r20, 0x00	; 0
+     efa:	66 e0       	ldi	r22, 0x06	; 6
+     efc:	83 e0       	ldi	r24, 0x03	; 3
+     efe:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+#if(COLUMNS_NUMBER==4)
+	GPIO_setupPinDirection(KEYPAD_COLUMNS_PORT_ID,KEYPAD_COLUMNS_FIRST_PIN_ID+3 ,PIN_INPUT);
+     f02:	40 e0       	ldi	r20, 0x00	; 0
+     f04:	67 e0       	ldi	r22, 0x07	; 7
+     f06:	83 e0       	ldi	r24, 0x03	; 3
+     f08:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+#endif
+	while(1){
+		for(row_num=0;row_num<ROWS_NUMBER;row_num++){
+     f0c:	d0 e0       	ldi	r29, 0x00	; 0
+     f0e:	24 c0       	rjmp	.+72     	; 0xf58 <KEYPAD_getPressedKey+0xa0>
+			/*set the one row as ouput pin each time*/
+			GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID,KEYPAD_ROWS_FIRST_PIN_ID+row_num,PIN_OUTPUT);
+     f10:	41 e0       	ldi	r20, 0x01	; 1
+     f12:	6d 2f       	mov	r22, r29
+     f14:	83 e0       	ldi	r24, 0x03	; 3
+     f16:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+			/*write Zero to this row(pressed)*/
+			GPIO_writePin(KEYPAD_ROWS_PORT_ID,KEYPAD_ROWS_FIRST_PIN_ID+row_num,button_pressed);
+     f1a:	40 e0       	ldi	r20, 0x00	; 0
+     f1c:	6d 2f       	mov	r22, r29
+     f1e:	83 e0       	ldi	r24, 0x03	; 3
+     f20:	0e 94 3b 06 	call	0xc76	; 0xc76 <GPIO_writePin>
+			for(col_num=0;col_num<COLUMNS_NUMBER;col_num++){
+     f24:	c0 e0       	ldi	r28, 0x00	; 0
+     f26:	10 c0       	rjmp	.+32     	; 0xf48 <KEYPAD_getPressedKey+0x90>
+				if(GPIO_readPin(KEYPAD_COLUMNS_PORT_ID,KEYPAD_COLUMNS_FIRST_PIN_ID+col_num)==button_pressed){
+     f28:	64 e0       	ldi	r22, 0x04	; 4
+     f2a:	6c 0f       	add	r22, r28
+     f2c:	83 e0       	ldi	r24, 0x03	; 3
+     f2e:	0e 94 ae 06 	call	0xd5c	; 0xd5c <GPIO_readPin>
+     f32:	81 11       	cpse	r24, r1
+     f34:	08 c0       	rjmp	.+16     	; 0xf46 <KEYPAD_getPressedKey+0x8e>
+                        #endif
+                    #elif(COLUMNS_NUMBER==4)
+                        #ifdef STANDARD
+                           return ((row_num * COLUMNS_NUMBER)+col_num+1);
+                        #else
+                           return KEYPAD_4X4_adjustKeyNumber((row_num * COLUMNS_NUMBER)+col_num+1);
+     f36:	8d 2f       	mov	r24, r29
+     f38:	88 0f       	add	r24, r24
+     f3a:	88 0f       	add	r24, r24
+     f3c:	8c 0f       	add	r24, r28
+     f3e:	8f 5f       	subi	r24, 0xFF	; 255
+     f40:	0e 94 33 07 	call	0xe66	; 0xe66 <KEYPAD_4X4_adjustKeyNumber>
+     f44:	0c c0       	rjmp	.+24     	; 0xf5e <KEYPAD_getPressedKey+0xa6>
+		for(row_num=0;row_num<ROWS_NUMBER;row_num++){
+			/*set the one row as ouput pin each time*/
+			GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID,KEYPAD_ROWS_FIRST_PIN_ID+row_num,PIN_OUTPUT);
+			/*write Zero to this row(pressed)*/
+			GPIO_writePin(KEYPAD_ROWS_PORT_ID,KEYPAD_ROWS_FIRST_PIN_ID+row_num,button_pressed);
+			for(col_num=0;col_num<COLUMNS_NUMBER;col_num++){
+     f46:	cf 5f       	subi	r28, 0xFF	; 255
+     f48:	c4 30       	cpi	r28, 0x04	; 4
+     f4a:	70 f3       	brcs	.-36     	; 0xf28 <KEYPAD_getPressedKey+0x70>
+
+				}
+			}
+			/*back the row as input pin again*/
+
+			GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID,KEYPAD_ROWS_FIRST_PIN_ID+row_num,PIN_INPUT);
+     f4c:	40 e0       	ldi	r20, 0x00	; 0
+     f4e:	6d 2f       	mov	r22, r29
+     f50:	83 e0       	ldi	r24, 0x03	; 3
+     f52:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+	GPIO_setupPinDirection(KEYPAD_COLUMNS_PORT_ID,KEYPAD_COLUMNS_FIRST_PIN_ID+2 ,PIN_INPUT);
+#if(COLUMNS_NUMBER==4)
+	GPIO_setupPinDirection(KEYPAD_COLUMNS_PORT_ID,KEYPAD_COLUMNS_FIRST_PIN_ID+3 ,PIN_INPUT);
+#endif
+	while(1){
+		for(row_num=0;row_num<ROWS_NUMBER;row_num++){
+     f56:	df 5f       	subi	r29, 0xFF	; 255
+     f58:	d4 30       	cpi	r29, 0x04	; 4
+     f5a:	d0 f2       	brcs	.-76     	; 0xf10 <KEYPAD_getPressedKey+0x58>
+     f5c:	d7 cf       	rjmp	.-82     	; 0xf0c <KEYPAD_getPressedKey+0x54>
+			/*back the row as input pin again*/
+
+			GPIO_setupPinDirection(KEYPAD_ROWS_PORT_ID,KEYPAD_ROWS_FIRST_PIN_ID+row_num,PIN_INPUT);
+		}
+	}
+}
+     f5e:	df 91       	pop	r29
+     f60:	cf 91       	pop	r28
+     f62:	08 95       	ret
+
+00000f64 <LCD_sendCommand>:
+/* to display the numbers*/
+void LCD_intgerToString(int num){
+	 char buff[16];              /* String to hold the ascii result */
+	 itoa(num,buff,10);          /* Use itoa C function to convert the data to its corresponding ASCII value, 10 for decimal */
+	 LCD_displayString(buff);    /* Display the string */
+}
+     f64:	cf 93       	push	r28
+     f66:	c8 2f       	mov	r28, r24
+     f68:	40 e0       	ldi	r20, 0x00	; 0
+     f6a:	61 e0       	ldi	r22, 0x01	; 1
+     f6c:	81 e0       	ldi	r24, 0x01	; 1
+     f6e:	0e 94 3b 06 	call	0xc76	; 0xc76 <GPIO_writePin>
+     f72:	89 ef       	ldi	r24, 0xF9	; 249
+     f74:	90 e0       	ldi	r25, 0x00	; 0
+     f76:	01 97       	sbiw	r24, 0x01	; 1
+     f78:	f1 f7       	brne	.-4      	; 0xf76 <LCD_sendCommand+0x12>
+     f7a:	00 c0       	rjmp	.+0      	; 0xf7c <LCD_sendCommand+0x18>
+     f7c:	00 00       	nop
+     f7e:	41 e0       	ldi	r20, 0x01	; 1
+     f80:	60 e0       	ldi	r22, 0x00	; 0
+     f82:	81 e0       	ldi	r24, 0x01	; 1
+     f84:	0e 94 3b 06 	call	0xc76	; 0xc76 <GPIO_writePin>
+     f88:	89 ef       	ldi	r24, 0xF9	; 249
+     f8a:	90 e0       	ldi	r25, 0x00	; 0
+     f8c:	01 97       	sbiw	r24, 0x01	; 1
+     f8e:	f1 f7       	brne	.-4      	; 0xf8c <LCD_sendCommand+0x28>
+     f90:	00 c0       	rjmp	.+0      	; 0xf92 <LCD_sendCommand+0x2e>
+     f92:	00 00       	nop
+     f94:	6c 2f       	mov	r22, r28
+     f96:	80 e0       	ldi	r24, 0x00	; 0
+     f98:	0e 94 06 07 	call	0xe0c	; 0xe0c <GPIO_writePort>
+     f9c:	89 ef       	ldi	r24, 0xF9	; 249
+     f9e:	90 e0       	ldi	r25, 0x00	; 0
+     fa0:	01 97       	sbiw	r24, 0x01	; 1
+     fa2:	f1 f7       	brne	.-4      	; 0xfa0 <LCD_sendCommand+0x3c>
+     fa4:	00 c0       	rjmp	.+0      	; 0xfa6 <LCD_sendCommand+0x42>
+     fa6:	00 00       	nop
+     fa8:	40 e0       	ldi	r20, 0x00	; 0
+     faa:	60 e0       	ldi	r22, 0x00	; 0
+     fac:	81 e0       	ldi	r24, 0x01	; 1
+     fae:	0e 94 3b 06 	call	0xc76	; 0xc76 <GPIO_writePin>
+     fb2:	89 ef       	ldi	r24, 0xF9	; 249
+     fb4:	90 e0       	ldi	r25, 0x00	; 0
+     fb6:	01 97       	sbiw	r24, 0x01	; 1
+     fb8:	f1 f7       	brne	.-4      	; 0xfb6 <LCD_sendCommand+0x52>
+     fba:	00 c0       	rjmp	.+0      	; 0xfbc <LCD_sendCommand+0x58>
+     fbc:	00 00       	nop
+     fbe:	cf 91       	pop	r28
+     fc0:	08 95       	ret
+
+00000fc2 <LCD_init>:
+     fc2:	41 e0       	ldi	r20, 0x01	; 1
+     fc4:	61 e0       	ldi	r22, 0x01	; 1
+     fc6:	81 e0       	ldi	r24, 0x01	; 1
+     fc8:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+     fcc:	41 e0       	ldi	r20, 0x01	; 1
+     fce:	60 e0       	ldi	r22, 0x00	; 0
+     fd0:	81 e0       	ldi	r24, 0x01	; 1
+     fd2:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+     fd6:	41 e0       	ldi	r20, 0x01	; 1
+     fd8:	62 e0       	ldi	r22, 0x02	; 2
+     fda:	81 e0       	ldi	r24, 0x01	; 1
+     fdc:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+     fe0:	40 e0       	ldi	r20, 0x00	; 0
+     fe2:	62 e0       	ldi	r22, 0x02	; 2
+     fe4:	81 e0       	ldi	r24, 0x01	; 1
+     fe6:	0e 94 3b 06 	call	0xc76	; 0xc76 <GPIO_writePin>
+     fea:	87 e8       	ldi	r24, 0x87	; 135
+     fec:	93 e1       	ldi	r25, 0x13	; 19
+     fee:	01 97       	sbiw	r24, 0x01	; 1
+     ff0:	f1 f7       	brne	.-4      	; 0xfee <LCD_init+0x2c>
+     ff2:	00 c0       	rjmp	.+0      	; 0xff4 <LCD_init+0x32>
+     ff4:	00 00       	nop
+     ff6:	6f ef       	ldi	r22, 0xFF	; 255
+     ff8:	80 e0       	ldi	r24, 0x00	; 0
+     ffa:	0e 94 f4 06 	call	0xde8	; 0xde8 <GPIO_setupPortDirection>
+     ffe:	88 e3       	ldi	r24, 0x38	; 56
+    1000:	0e 94 b2 07 	call	0xf64	; 0xf64 <LCD_sendCommand>
+    1004:	8c e0       	ldi	r24, 0x0C	; 12
+    1006:	0e 94 b2 07 	call	0xf64	; 0xf64 <LCD_sendCommand>
+    100a:	81 e0       	ldi	r24, 0x01	; 1
+    100c:	0e 94 b2 07 	call	0xf64	; 0xf64 <LCD_sendCommand>
+    1010:	08 95       	ret
+
+00001012 <LCD_displayCharacter>:
+    1012:	cf 93       	push	r28
+    1014:	c8 2f       	mov	r28, r24
+    1016:	41 e0       	ldi	r20, 0x01	; 1
+    1018:	61 e0       	ldi	r22, 0x01	; 1
+    101a:	81 e0       	ldi	r24, 0x01	; 1
+    101c:	0e 94 3b 06 	call	0xc76	; 0xc76 <GPIO_writePin>
+    1020:	89 ef       	ldi	r24, 0xF9	; 249
+    1022:	90 e0       	ldi	r25, 0x00	; 0
+    1024:	01 97       	sbiw	r24, 0x01	; 1
+    1026:	f1 f7       	brne	.-4      	; 0x1024 <LCD_displayCharacter+0x12>
+    1028:	00 c0       	rjmp	.+0      	; 0x102a <LCD_displayCharacter+0x18>
+    102a:	00 00       	nop
+    102c:	41 e0       	ldi	r20, 0x01	; 1
+    102e:	60 e0       	ldi	r22, 0x00	; 0
+    1030:	81 e0       	ldi	r24, 0x01	; 1
+    1032:	0e 94 3b 06 	call	0xc76	; 0xc76 <GPIO_writePin>
+    1036:	89 ef       	ldi	r24, 0xF9	; 249
+    1038:	90 e0       	ldi	r25, 0x00	; 0
+    103a:	01 97       	sbiw	r24, 0x01	; 1
+    103c:	f1 f7       	brne	.-4      	; 0x103a <LCD_displayCharacter+0x28>
+    103e:	00 c0       	rjmp	.+0      	; 0x1040 <LCD_displayCharacter+0x2e>
+    1040:	00 00       	nop
+    1042:	6c 2f       	mov	r22, r28
+    1044:	80 e0       	ldi	r24, 0x00	; 0
+    1046:	0e 94 06 07 	call	0xe0c	; 0xe0c <GPIO_writePort>
+    104a:	89 ef       	ldi	r24, 0xF9	; 249
+    104c:	90 e0       	ldi	r25, 0x00	; 0
+    104e:	01 97       	sbiw	r24, 0x01	; 1
+    1050:	f1 f7       	brne	.-4      	; 0x104e <LCD_displayCharacter+0x3c>
+    1052:	00 c0       	rjmp	.+0      	; 0x1054 <LCD_displayCharacter+0x42>
+    1054:	00 00       	nop
+    1056:	40 e0       	ldi	r20, 0x00	; 0
+    1058:	60 e0       	ldi	r22, 0x00	; 0
+    105a:	81 e0       	ldi	r24, 0x01	; 1
+    105c:	0e 94 3b 06 	call	0xc76	; 0xc76 <GPIO_writePin>
+    1060:	89 ef       	ldi	r24, 0xF9	; 249
+    1062:	90 e0       	ldi	r25, 0x00	; 0
+    1064:	01 97       	sbiw	r24, 0x01	; 1
+    1066:	f1 f7       	brne	.-4      	; 0x1064 <LCD_displayCharacter+0x52>
+    1068:	00 c0       	rjmp	.+0      	; 0x106a <LCD_displayCharacter+0x58>
+    106a:	00 00       	nop
+    106c:	cf 91       	pop	r28
+    106e:	08 95       	ret
+
+00001070 <LCD_displayString>:
+    1070:	0f 93       	push	r16
+    1072:	1f 93       	push	r17
+    1074:	cf 93       	push	r28
+    1076:	8c 01       	movw	r16, r24
+    1078:	c0 e0       	ldi	r28, 0x00	; 0
+    107a:	03 c0       	rjmp	.+6      	; 0x1082 <LCD_displayString+0x12>
+    107c:	0e 94 09 08 	call	0x1012	; 0x1012 <LCD_displayCharacter>
+    1080:	cf 5f       	subi	r28, 0xFF	; 255
+    1082:	f8 01       	movw	r30, r16
+    1084:	ec 0f       	add	r30, r28
+    1086:	f1 1d       	adc	r31, r1
+    1088:	80 81       	ld	r24, Z
+    108a:	81 11       	cpse	r24, r1
+    108c:	f7 cf       	rjmp	.-18     	; 0x107c <LCD_displayString+0xc>
+    108e:	cf 91       	pop	r28
+    1090:	1f 91       	pop	r17
+    1092:	0f 91       	pop	r16
+    1094:	08 95       	ret
+
+00001096 <LCD_moveCursor>:
+    1096:	81 30       	cpi	r24, 0x01	; 1
+    1098:	31 f0       	breq	.+12     	; 0x10a6 <LCD_moveCursor+0x10>
+    109a:	70 f0       	brcs	.+28     	; 0x10b8 <LCD_moveCursor+0x22>
+    109c:	82 30       	cpi	r24, 0x02	; 2
+    109e:	31 f0       	breq	.+12     	; 0x10ac <LCD_moveCursor+0x16>
+    10a0:	83 30       	cpi	r24, 0x03	; 3
+    10a2:	39 f0       	breq	.+14     	; 0x10b2 <LCD_moveCursor+0x1c>
+    10a4:	0a c0       	rjmp	.+20     	; 0x10ba <LCD_moveCursor+0x24>
+    10a6:	90 e4       	ldi	r25, 0x40	; 64
+    10a8:	96 0f       	add	r25, r22
+    10aa:	07 c0       	rjmp	.+14     	; 0x10ba <LCD_moveCursor+0x24>
+    10ac:	90 e1       	ldi	r25, 0x10	; 16
+    10ae:	96 0f       	add	r25, r22
+    10b0:	04 c0       	rjmp	.+8      	; 0x10ba <LCD_moveCursor+0x24>
+    10b2:	90 e5       	ldi	r25, 0x50	; 80
+    10b4:	96 0f       	add	r25, r22
+    10b6:	01 c0       	rjmp	.+2      	; 0x10ba <LCD_moveCursor+0x24>
+    10b8:	96 2f       	mov	r25, r22
+    10ba:	89 2f       	mov	r24, r25
+    10bc:	80 68       	ori	r24, 0x80	; 128
+    10be:	0e 94 b2 07 	call	0xf64	; 0xf64 <LCD_sendCommand>
+    10c2:	08 95       	ret
+
+000010c4 <LCD_clearScreen>:
+/*to clear the screen*/
+void LCD_clearScreen(void){
+	LCD_sendCommand(LCD_CLEAR_DISPLAY);
+    10c4:	81 e0       	ldi	r24, 0x01	; 1
+    10c6:	0e 94 b2 07 	call	0xf64	; 0xf64 <LCD_sendCommand>
+    10ca:	08 95       	ret
+
+000010cc <LED_SETUP>:
+ * Function_Name:LED_SETUP
+ *
+ * Description:Set the direction of the Led (always out)
+ *
+ *************************************************************/
+void LED_SETUP(uint8 LED_PORT,uint8 LED_PIN){
+    10cc:	cf 93       	push	r28
+    10ce:	df 93       	push	r29
+    10d0:	c8 2f       	mov	r28, r24
+    10d2:	d6 2f       	mov	r29, r22
+	GPIO_setupPinDirection(LED_PORT,LED_PIN , PIN_OUTPUT);
+    10d4:	41 e0       	ldi	r20, 0x01	; 1
+    10d6:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+	GPIO_writePin(LED_PORT,LED_PIN ,LOGIC_LOW);
+    10da:	40 e0       	ldi	r20, 0x00	; 0
+    10dc:	6d 2f       	mov	r22, r29
+    10de:	8c 2f       	mov	r24, r28
+    10e0:	0e 94 3b 06 	call	0xc76	; 0xc76 <GPIO_writePin>
+}
+    10e4:	df 91       	pop	r29
+    10e6:	cf 91       	pop	r28
+    10e8:	08 95       	ret
+
+000010ea <LED_ON>:
+ *
+ * Description:Turn on the Led
+ *
+ *************************************************************/
+void LED_ON(uint8 LED_PORT,uint8 LED_PIN){
+	GPIO_writePin(LED_PORT,LED_PIN ,LOGIC_HIGH);
+    10ea:	41 e0       	ldi	r20, 0x01	; 1
+    10ec:	0e 94 3b 06 	call	0xc76	; 0xc76 <GPIO_writePin>
+    10f0:	08 95       	ret
+
+000010f2 <LED_OFF>:
+ *
+ * Description:Turn OFF the Led
+ *
+ *************************************************************/
+void LED_OFF(uint8 LED_PORT,uint8 LED_PIN){
+	GPIO_writePin(LED_PORT,LED_PIN ,LOGIC_LOW);
+    10f2:	40 e0       	ldi	r20, 0x00	; 0
+    10f4:	0e 94 3b 06 	call	0xc76	; 0xc76 <GPIO_writePin>
+    10f8:	08 95       	ret
+
+000010fa <SPI_initMaster>:
+	GPIO_setupPinDirection(SPI_PORT_ID,SPI_MOSI_PIN_ID, PIN_INPUT);
+	GPIO_setupPinDirection(SPI_PORT_ID,SPI_SCK_PIN_ID, PIN_INPUT);
+	GPIO_setupPinDirection(SPI_PORT_ID,SPI_SS_PIN_ID, PIN_INPUT);
+	SPCR=(1<<SPE);
+	/*to use f_osc/4 */
+	CLEAR_BIT(SPSR,SPI2X);
+    10fa:	40 e0       	ldi	r20, 0x00	; 0
+    10fc:	66 e0       	ldi	r22, 0x06	; 6
+    10fe:	81 e0       	ldi	r24, 0x01	; 1
+    1100:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+    1104:	41 e0       	ldi	r20, 0x01	; 1
+    1106:	65 e0       	ldi	r22, 0x05	; 5
+    1108:	81 e0       	ldi	r24, 0x01	; 1
+    110a:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+    110e:	41 e0       	ldi	r20, 0x01	; 1
+    1110:	67 e0       	ldi	r22, 0x07	; 7
+    1112:	81 e0       	ldi	r24, 0x01	; 1
+    1114:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+    1118:	41 e0       	ldi	r20, 0x01	; 1
+    111a:	64 e0       	ldi	r22, 0x04	; 4
+    111c:	81 e0       	ldi	r24, 0x01	; 1
+    111e:	0e 94 c8 05 	call	0xb90	; 0xb90 <GPIO_setupPinDirection>
+    1122:	80 e5       	ldi	r24, 0x50	; 80
+    1124:	8d b9       	out	0x0d, r24	; 13
+    1126:	8e b1       	in	r24, 0x0e	; 14
+    1128:	8e 7f       	andi	r24, 0xFE	; 254
+    112a:	8e b9       	out	0x0e, r24	; 14
+    112c:	08 95       	ret
+
+0000112e <SPI_sendReciveByte>:
+ * to send the reciever byte
+ *
+ */
+
+uint8 SPI_sendReciveByte(uint8 data){
+	SPDR=data;
+    112e:	8f b9       	out	0x0f, r24	; 15
+	while(BIT_IS_CLEAR(SPSR,SPIF));
+    1130:	77 9b       	sbis	0x0e, 7	; 14
+    1132:	fe cf       	rjmp	.-4      	; 0x1130 <SPI_sendReciveByte+0x2>
+	return SPDR;
+    1134:	8f b1       	in	r24, 0x0f	; 15
+}
+    1136:	08 95       	ret
+
+00001138 <__vector_7>:
+
+/*
+ * ISR For TIMER1 Comapare_MODE
+ */
+ISR(TIMER1_COMPA_vect)
+{
+    1138:	1f 92       	push	r1
+    113a:	0f 92       	push	r0
+    113c:	0f b6       	in	r0, 0x3f	; 63
+    113e:	0f 92       	push	r0
+    1140:	11 24       	eor	r1, r1
+    1142:	2f 93       	push	r18
+    1144:	3f 93       	push	r19
+    1146:	4f 93       	push	r20
+    1148:	5f 93       	push	r21
+    114a:	6f 93       	push	r22
+    114c:	7f 93       	push	r23
+    114e:	8f 93       	push	r24
+    1150:	9f 93       	push	r25
+    1152:	af 93       	push	r26
+    1154:	bf 93       	push	r27
+    1156:	ef 93       	push	r30
+    1158:	ff 93       	push	r31
+	if(g_callBackPtr != NULL_PTR)
+    115a:	e0 91 e1 02 	lds	r30, 0x02E1	; 0x8002e1 <g_callBackPtr>
+    115e:	f0 91 e2 02 	lds	r31, 0x02E2	; 0x8002e2 <g_callBackPtr+0x1>
+    1162:	30 97       	sbiw	r30, 0x00	; 0
+    1164:	09 f0       	breq	.+2      	; 0x1168 <__vector_7+0x30>
+	{
+		/* Call the Call Back function in the application after the edge is detected */
+		(*g_callBackPtr)();
+    1166:	09 95       	icall
+	}
+}
+    1168:	ff 91       	pop	r31
+    116a:	ef 91       	pop	r30
+    116c:	bf 91       	pop	r27
+    116e:	af 91       	pop	r26
+    1170:	9f 91       	pop	r25
+    1172:	8f 91       	pop	r24
+    1174:	7f 91       	pop	r23
+    1176:	6f 91       	pop	r22
+    1178:	5f 91       	pop	r21
+    117a:	4f 91       	pop	r20
+    117c:	3f 91       	pop	r19
+    117e:	2f 91       	pop	r18
+    1180:	0f 90       	pop	r0
+    1182:	0f be       	out	0x3f, r0	; 63
+    1184:	0f 90       	pop	r0
+    1186:	1f 90       	pop	r1
+    1188:	18 95       	reti
+
+0000118a <__vector_9>:
+/*
+ * ISR For TIMER1 OVERFLOW_MODE
+ */
+ISR(TIMER1_OVF_vect)
+{
+    118a:	1f 92       	push	r1
+    118c:	0f 92       	push	r0
+    118e:	0f b6       	in	r0, 0x3f	; 63
+    1190:	0f 92       	push	r0
+    1192:	11 24       	eor	r1, r1
+    1194:	2f 93       	push	r18
+    1196:	3f 93       	push	r19
+    1198:	4f 93       	push	r20
+    119a:	5f 93       	push	r21
+    119c:	6f 93       	push	r22
+    119e:	7f 93       	push	r23
+    11a0:	8f 93       	push	r24
+    11a2:	9f 93       	push	r25
+    11a4:	af 93       	push	r26
+    11a6:	bf 93       	push	r27
+    11a8:	ef 93       	push	r30
+    11aa:	ff 93       	push	r31
+	if(g_callBackPtr != NULL_PTR)
+    11ac:	e0 91 e1 02 	lds	r30, 0x02E1	; 0x8002e1 <g_callBackPtr>
+    11b0:	f0 91 e2 02 	lds	r31, 0x02E2	; 0x8002e2 <g_callBackPtr+0x1>
+    11b4:	30 97       	sbiw	r30, 0x00	; 0
+    11b6:	09 f0       	breq	.+2      	; 0x11ba <__vector_9+0x30>
+	{
+		/* Call the Call Back function in the application after the edge is detected */
+		(*g_callBackPtr)();
+    11b8:	09 95       	icall
+	}
+}
+    11ba:	ff 91       	pop	r31
+    11bc:	ef 91       	pop	r30
+    11be:	bf 91       	pop	r27
+    11c0:	af 91       	pop	r26
+    11c2:	9f 91       	pop	r25
+    11c4:	8f 91       	pop	r24
+    11c6:	7f 91       	pop	r23
+    11c8:	6f 91       	pop	r22
+    11ca:	5f 91       	pop	r21
+    11cc:	4f 91       	pop	r20
+    11ce:	3f 91       	pop	r19
+    11d0:	2f 91       	pop	r18
+    11d2:	0f 90       	pop	r0
+    11d4:	0f be       	out	0x3f, r0	; 63
+    11d6:	0f 90       	pop	r0
+    11d8:	1f 90       	pop	r1
+    11da:	18 95       	reti
+
+000011dc <Timer1_init>:
+ * Description:
+ *
+ * to initialize the Timer1 in Normal mode or compare mode
+ */
+
+void Timer1_init(const Timer1_ConfigType *Config_ptr){
+    11dc:	fc 01       	movw	r30, r24
+
+    if(Config_ptr->mode==NORMAL_MODE){
+    11de:	84 81       	ldd	r24, Z+4	; 0x04
+    11e0:	81 11       	cpse	r24, r1
+    11e2:	0c c0       	rjmp	.+24     	; 0x11fc <Timer1_init+0x20>
+	    /*set the initial value*/
+		TCNT1=Config_ptr->initial_value;
+    11e4:	80 81       	ld	r24, Z
+    11e6:	91 81       	ldd	r25, Z+1	; 0x01
+    11e8:	9d bd       	out	0x2d, r25	; 45
+    11ea:	8c bd       	out	0x2c, r24	; 44
+		/*as I don't want generate PWM Signal*/
+		TCCR1A=(1<<FOC1A)|(1<<FOC1B);
+    11ec:	8c e0       	ldi	r24, 0x0C	; 12
+    11ee:	8f bd       	out	0x2f, r24	; 47
+		/*to active the Timer1_Overflow Interrupt*/
+		TIMSK|=(1<<TOIE1);
+    11f0:	89 b7       	in	r24, 0x39	; 57
+    11f2:	84 60       	ori	r24, 0x04	; 4
+    11f4:	89 bf       	out	0x39, r24	; 57
+		/*to set the required prescalar*/
+		TCCR1B=(Config_ptr->prescalar);
+    11f6:	85 81       	ldd	r24, Z+5	; 0x05
+    11f8:	8e bd       	out	0x2e, r24	; 46
+    11fa:	08 95       	ret
+    }
+   else if(Config_ptr->mode==COMPARE_MODE){
+    11fc:	81 30       	cpi	r24, 0x01	; 1
+    11fe:	81 f4       	brne	.+32     	; 0x1220 <Timer1_init+0x44>
+    	/*set the initial value*/
+		TCNT1=Config_ptr->initial_value;
+    1200:	80 81       	ld	r24, Z
+    1202:	91 81       	ldd	r25, Z+1	; 0x01
+    1204:	9d bd       	out	0x2d, r25	; 45
+    1206:	8c bd       	out	0x2c, r24	; 44
+		/*set the compare value*/
+		OCR1A=Config_ptr->compare_value;
+    1208:	82 81       	ldd	r24, Z+2	; 0x02
+    120a:	93 81       	ldd	r25, Z+3	; 0x03
+    120c:	9b bd       	out	0x2b, r25	; 43
+    120e:	8a bd       	out	0x2a, r24	; 42
+		/*as I don't want generate PWM Signal*/
+		TCCR1A=(1<<FOC1A)|(1<<FOC1B);
+    1210:	8c e0       	ldi	r24, 0x0C	; 12
+    1212:	8f bd       	out	0x2f, r24	; 47
+		/*to active the Timer1_COMPARE Interrupt*/
+		TIMSK|=(1<<OCIE1A);
+    1214:	89 b7       	in	r24, 0x39	; 57
+    1216:	80 61       	ori	r24, 0x10	; 16
+    1218:	89 bf       	out	0x39, r24	; 57
+		/*to set the required prescalar*/
+		TCCR1B=(1<<WGM12)|(Config_ptr->prescalar);
+    121a:	85 81       	ldd	r24, Z+5	; 0x05
+    121c:	88 60       	ori	r24, 0x08	; 8
+    121e:	8e bd       	out	0x2e, r24	; 46
+    1220:	08 95       	ret
+
+00001222 <Timer1_deInit>:
+ *
+ * to disable the Timer1( stop the Timer1 from counting)
+ */
+void Timer1_deInit(void){
+	/*Close the Clock Source to Stop The Timer*/
+	TCCR1B=0;
+    1222:	1e bc       	out	0x2e, r1	; 46
+    1224:	08 95       	ret
+
+00001226 <Timer1_setCallBack>:
+void Timer1_setCallBack(void(*a_ptr)(void)){
+	/*
+	 * set the address of the
+	 * call back function in the application
+	 */
+	g_callBackPtr=a_ptr;
+    1226:	90 93 e2 02 	sts	0x02E2, r25	; 0x8002e2 <g_callBackPtr+0x1>
+    122a:	80 93 e1 02 	sts	0x02E1, r24	; 0x8002e1 <g_callBackPtr>
+    122e:	08 95       	ret
+
+00001230 <__tablejump2__>:
+    1230:	ee 0f       	add	r30, r30
+    1232:	ff 1f       	adc	r31, r31
+    1234:	05 90       	lpm	r0, Z+
+    1236:	f4 91       	lpm	r31, Z
+    1238:	e0 2d       	mov	r30, r0
+    123a:	09 94       	ijmp
+
+0000123c <_exit>:
+    123c:	f8 94       	cli
+
+0000123e <__stop_program>:
+    123e:	ff cf       	rjmp	.-2      	; 0x123e <__stop_program>
